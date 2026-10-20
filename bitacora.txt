@@ -1,3 +1,5 @@
+BITACORA
+
 URL: http://127.0.0.1:5500/index.html
 Protocolo: http
 Host: 127.0.0.1:5500
@@ -8,6 +10,17 @@ Codigo de estado: 304
 Ruta no existente: - error: Cannot GET /index.html/promociones.html
 - significado: significa que el servidor web al que estás intentando acceder no encuentra la página en la ruta exacta que especificaste
 
-HTML:
-CSS:
-JAVASCRIPT:
+HTML: Esta es todas las bases de la estructura de la pagina
+CSS: Este son todos los estilos para la pagina
+JAVASCRIPT: Esta es el que hace la pagina interactuable, logica y comportamiento
+
+Rutas que use:
+- img/Icono_Rueda_Libre.jpg
+- index.html
+- Paginas/tarifas.html
+- Paginas/reservas.html
+- ../img/Icono_Rueda_Libre.jpg
+- ../index.html
+- tarifas.html
+- reservas.html
+- ../img/Icono_Rueda_Libre.jpg
