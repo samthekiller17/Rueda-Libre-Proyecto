@@ -1,0 +1,13 @@
+URL: http://127.0.0.1:5500/index.html
+Protocolo: http
+Host: 127.0.0.1:5500
+Puerto: 80
+Ruta: index.html
+Metodo de la peticion: GET
+Codigo de estado: 304
+Ruta no existente: - error: Cannot GET /index.html/promociones.html
+- significado: significa que el servidor web al que estás intentando acceder no encuentra la página en la ruta exacta que especificaste
+
+HTML:
+CSS:
+JAVASCRIPT:
