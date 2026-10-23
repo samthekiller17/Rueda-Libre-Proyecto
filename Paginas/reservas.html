@@ -10,36 +10,167 @@
 </head>
 
 <body>
-    <img src="../img/Icono_Rueda_Libre.jpg" alt="Icono rueda libre" width="300 px">
-    <nav>
-        <ul>
-            <li><a href="../index.html">Inicio</a></li>
-            <li><a href="tarifas.html">Tarifas y rutas</a></li>
-            <li><a href="reservas.html">Reservas</a></li>
-        </ul>
-    </nav>
+    <header>
+        <img src="../img/Icono_Rueda_Libre.jpg" alt="Icono rueda libre" width="300">
+        <nav aria-label="Principal">
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="tarifas.html">Tarifas y rutas</a></li>
+                <li><a href="reservas.html">Reservas</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <hr>
 
-    <!-- Punto 1: Título principal -->
-    <h1>Reserva tu bicicleta</h1>
+    <main>
+        <h1>Reserva tu bicicleta</h1>
 
-    <p>Para gestionar tu reserva o resolver cualquier duda, comunícate con nosotros.</p>
+        <p>Para gestionar tu reserva o resolver cualquier duda, comunícate con nosotros.</p>
 
-    
-    <p><strong>Correo de contacto:</strong> <a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a></p>
+        <p><strong>Correo de contacto:</strong> <a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a></p>
 
-    <h2>Horario de atención</h2>
-    <dl>
-        <dt>Lunes a Viernes</dt>
-        <dd>8:00 a.m. - 6:00 p.m.</dd>
+        <!-- Contenido complementario: horario de atención -->
+        <aside aria-label="Horario de atención">
+            <h2>Horario de atención</h2>
+            <dl>
+                <dt>Lunes a Viernes</dt>
+                <dd>8:00 a.m. - 6:00 p.m.</dd>
 
-        <dt>Sábados y Domingos</dt>
-        <dd>8:00 a.m. - 2:00 p.m.</dd>
+                <dt>Sábados y Domingos</dt>
+                <dd>8:00 a.m. - 2:00 p.m.</dd>
 
-        <dt>Festivos</dt>
-        <dd>Cerrado</dd>
-    </dl>
+                <dt>Festivos</dt>
+                <dd>Cerrado</dd>
+            </dl>
+        </aside>
+
+        <hr>
+
+        <section>
+            <h2>Formulario de reserva</h2>
+            <p>Los campos marcados con * son obligatorios.</p>
+
+            <form action="#" method="post">
+
+                <!-- Grupo 1: datos del cliente -->
+                <fieldset>
+                    <legend>Tus datos</legend>
+
+                    <p>
+                        <label for="nombre">Nombre completo *</label>
+                        <input type="text" id="nombre" name="nombre" autocomplete="name" required>
+                    </p>
+
+                    <p>
+                        <label for="correo">Correo electrónico *</label>
+                        <input type="email" id="correo" name="correo" autocomplete="email" required>
+                    </p>
+
+                    <p>
+                        <label for="celular">Celular</label>
+                        <input type="tel" id="celular" name="celular" autocomplete="tel-national"
+                            placeholder="10 dígitos, empieza por 3" pattern="3[0-9]{9}"
+                            title="10 dígitos, empezando por 3">
+                    </p>
+
+                    <p>
+                        <label for="ciudad">Ciudad</label>
+                        <select id="ciudad" name="ciudad">
+                            <option value="">Selecciona una ciudad</option>
+                            <option value="medellin">Medellín</option>
+                            <option value="bello">Bello</option>
+                            <option value="itagui">Itagüí</option>
+                            <option value="envigado">Envigado</option>
+                            <option value="sabaneta">Sabaneta</option>
+                            <option value="la-estrella">La Estrella</option>
+                            <option value="caldas">Caldas</option>
+                            <option value="copacabana">Copacabana</option>
+                            <option value="girardota">Girardota</option>
+                            <option value="barbosa">Barbosa</option>
+                            <option value="otra">Otra</option>
+                        </select>
+                    </p>
+                </fieldset>
+
+                <!-- Grupo 2: detalles del alquiler -->
+                <fieldset>
+                    <legend>Tu alquiler</legend>
+
+                    <!-- Los tres radios comparten name="tipo_bicicleta": solo se puede elegir uno -->
+                    <fieldset>
+                        <legend>Tipo de bicicleta *</legend>
+                        <p>
+                            <input type="radio" id="tipo-urbana" name="tipo_bicicleta" value="urbana" required>
+                            <label for="tipo-urbana">Urbana</label>
+                        </p>
+                        <p>
+                            <input type="radio" id="tipo-montana" name="tipo_bicicleta" value="montana">
+                            <label for="tipo-montana">Montaña</label>
+                        </p>
+                        <p>
+                            <input type="radio" id="tipo-electrica" name="tipo_bicicleta" value="electrica">
+                            <label for="tipo-electrica">Eléctrica</label>
+                        </p>
+                    </fieldset>
+
+                    <p>
+                        <label for="fecha">Fecha del alquiler *</label>
+                        <input type="date" id="fecha" name="fecha" required>
+                    </p>
+
+                    <p>
+                        <label for="duracion">Duración *</label>
+                        <select id="duracion" name="duracion" required>
+                            <option value="">Selecciona una duración</option>
+                            <option value="1-hora">1 hora</option>
+                            <option value="medio-dia">Medio día (4 h)</option>
+                            <option value="dia-completo">Día completo (8 h)</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="cantidad">Número de bicicletas *</label>
+                        <input type="number" id="cantidad" name="cantidad" min="1" max="10" value="1" required>
+                    </p>
+
+                    <p>
+                        <label for="recorrido">Recorrido guiado (opcional)</label>
+                        <select id="recorrido" name="recorrido">
+                            <option value="">Sin recorrido guiado</option>
+                            <option value="rio-y-parques">Río y Parques (fácil)</option>
+                            <option value="sabores-de-barrio">Sabores de Barrio (medio)</option>
+                            <option value="reto-las-palmas">Reto Las Palmas (difícil)</option>
+                        </select>
+                    </p>
+                </fieldset>
+
+                <!-- Grupo 3: confirmación -->
+                <fieldset>
+                    <legend>Confirmación</legend>
+
+                    <p>
+                        <label for="comentarios">Comentarios</label>
+                        <textarea id="comentarios" name="comentarios" rows="4" maxlength="300"
+                            placeholder="Máximo 300 caracteres."></textarea>
+                    </p>
+
+                    <p>
+                        <input type="checkbox" id="novedades" name="novedades" value="si">
+                        <label for="novedades">Quiero recibir novedades y promociones por correo</label>
+                    </p>
+
+                    <p>
+                        <input type="checkbox" id="acepta-condiciones" name="acepta_condiciones" value="si" required>
+                        <label for="acepta-condiciones">Confirmo que los datos son correctos y llevaré mi identificación
+                            *</label>
+                    </p>
+                </fieldset>
+
+                <button type="submit">Enviar reserva</button>
+            </form>
+        </section>
+    </main>
 
     <hr>
 

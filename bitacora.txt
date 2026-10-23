@@ -24,3 +24,15 @@ Rutas que use:
 - tarifas.html
 - reservas.html
 - ../img/Icono_Rueda_Libre.jpg
+
+Esquema de regiones de cada pagina:
+
+Página (inicio / tarifas / reservas)
+├── header
+│   ├── logo (+ h1 en inicio y tarifas)
+│   └── nav (principal)
+├── main
+│   ├── section → h2 (+ article → h4 en "Nuestros servicios")
+│   └── aside (solo tarifas y reservas)
+└── footer
+
