@@ -10,8 +10,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 
@@ -38,7 +37,8 @@
 
         <p><strong>Correo de contacto:</strong> <a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a></p>
 
-
+        <!-- Contenido complementario: horario de atención.
+             Ya tiene un h2 visible, así que se enlaza con aria-labelledby en vez de repetir el texto -->
         <aside aria-labelledby="titulo-horario">
             <h2 id="titulo-horario">Horario de atención</h2>
             <dl>
@@ -59,23 +59,25 @@
             <h2>Formulario de reserva</h2>
             <p>Los campos marcados con * son obligatorios.</p>
 
-
+            <!-- action provisional: aún no hay servidor que reciba los datos -->
             <form action="#" method="post">
 
-
+                <!-- Grupo 1: datos del cliente -->
                 <fieldset>
                     <legend>Tus datos</legend>
 
                     <p>
                         <label for="nombre">Nombre completo *</label>
-                        <input type="text" id="nombre" name="nombre" autocomplete="name" required minlength="3"
+                        <input type="text" id="nombre" name="nombre" autocomplete="name"
+                            required minlength="3"
                             title="Escribe al menos 3 caracteres">
                     </p>
 
                     <p>
                         <label for="documento">Documento *</label>
-                        <input type="text" id="documento" name="documento" inputmode="numeric" required
-                            pattern="[0-9]{6,10}" placeholder="Solo números, 6 a 10 dígitos"
+                        <input type="text" id="documento" name="documento" inputmode="numeric"
+                            required pattern="[0-9]{6,10}"
+                            placeholder="Solo números, 6 a 10 dígitos"
                             title="Solo números, entre 6 y 10 dígitos. Ejemplo: 1234567">
                     </p>
 
@@ -86,8 +88,10 @@
 
                     <p>
                         <label for="celular">Celular *</label>
-                        <input type="tel" id="celular" name="celular" inputmode="numeric" autocomplete="tel-national"
-                            required pattern="3[0-9]{9}" placeholder="10 dígitos, empieza por 3"
+                        <input type="tel" id="celular" name="celular" inputmode="numeric"
+                            autocomplete="tel-national"
+                            required pattern="3[0-9]{9}"
+                            placeholder="10 dígitos, empieza por 3"
                             title="10 dígitos y debe empezar por 3. Ejemplo: 3001234567">
                     </p>
 
@@ -110,22 +114,23 @@
                     </p>
                 </fieldset>
 
-
+                <!-- Grupo 2: detalles del alquiler -->
                 <fieldset>
                     <legend>Tu alquiler</legend>
 
-
+                    <!-- Los tres radios comparten name="tipo_bicicleta": solo se puede elegir uno.
+                         Con required en uno de ellos basta para exigir que el grupo tenga selección. -->
                     <fieldset>
                         <legend>Tipo de bicicleta *</legend>
-                        <p>
+                        <p class="opcion">
                             <input type="radio" id="tipo-urbana" name="tipo_bicicleta" value="urbana" required>
                             <label for="tipo-urbana">Urbana</label>
                         </p>
-                        <p>
+                        <p class="opcion">
                             <input type="radio" id="tipo-montana" name="tipo_bicicleta" value="montana">
                             <label for="tipo-montana">Montaña</label>
                         </p>
-                        <p>
+                        <p class="opcion">
                             <input type="radio" id="tipo-electrica" name="tipo_bicicleta" value="electrica">
                             <label for="tipo-electrica">Eléctrica</label>
                         </p>
@@ -143,13 +148,15 @@
 
                     <p>
                         <label for="fecha">Fecha del alquiler *</label>
-                        <input type="date" id="fecha" name="fecha" required min="2026-11-01" max="2026-12-31"
+                        <input type="date" id="fecha" name="fecha"
+                            required min="2026-11-01" max="2026-12-31"
                             title="Elige una fecha entre el 1 de noviembre y el 31 de diciembre de 2026">
                     </p>
 
                     <p>
                         <label for="cantidad">Cantidad de bicicletas (1 a 6) *</label>
-                        <input type="number" id="cantidad" name="cantidad" required min="1" max="6" step="1"
+                        <input type="number" id="cantidad" name="cantidad"
+                            required min="1" max="6" step="1"
                             title="Elige un número entero entre 1 y 6">
                     </p>
 
@@ -164,6 +171,7 @@
                     </p>
                 </fieldset>
 
+                <!-- Grupo 3: confirmación -->
                 <fieldset>
                     <legend>Confirmación</legend>
 
@@ -173,12 +181,12 @@
                             placeholder="Opcional"></textarea>
                     </p>
 
-                    <p>
+                    <p class="opcion">
                         <input type="checkbox" id="novedades" name="novedades" value="si">
                         <label for="novedades">Quiero recibir novedades y promociones por correo</label>
                     </p>
 
-                    <p>
+                    <p class="opcion">
                         <input type="checkbox" id="acepta-politicas" name="acepta_politicas" value="si" required>
                         <label for="acepta-politicas">Acepto las políticas de alquiler *</label>
                     </p>

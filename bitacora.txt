@@ -96,3 +96,16 @@ Conflicto de la clase .activo:
 
 - El enlace de la pagina actual no se veia distinto de los demas, aunque tenia su estilo
 - Lo arregle escribiendo #menu a.activo que ahora es la mas fuerte
+
+Todo en su lugar: modelo de caja:
+
+Valores antes y despues de cambiar box-sizing:
+
+| box-sizing -----------------------------| Contenido ------------| Relleno ------------| Borde ------------|Ancho total-----|
+|-----------------------------------------|-----------------------|---------------------|-------------------|----------------|
+|content-box (antes)                      | 800 px                | 48 px               | 2 px              | 850 px         |
+|-----------------------------------------|-----------------------|---------------------|-------------------|----------------|
+|border-box (despues)                     | 670 px                | 48 px               | 2 px              | 720 px         |
+|-----------------------------------------|-----------------------|---------------------|-------------------|----------------|
+
+Observe que con content box, el ancho solo cuenta con el contenido y el relleno y el borde se suman por fuera, la tarjeta media 850 px, media mas que su contenido. Con el border-box el ancho ya incluye el relleno y el borde, la tarjeta mide 720 px.
