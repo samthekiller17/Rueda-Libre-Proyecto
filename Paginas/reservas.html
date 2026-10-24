@@ -6,11 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Reserva tu bicicleta en Rueda Libre Medellín.">
     <meta name="author" content="Nodo Digital">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
     <title>Reservas | Rueda Libre</title>
+    
 </head>
 
 <body>
-     <a href="#contenido">Saltar al contenido principal</a>
+    <a href="#contenido">Saltar al contenido principal</a>
 
     <header>
         <img src="../img/Icono_Rueda_Libre.jpg" alt="Logo de Rueda Libre" width="300">
@@ -32,7 +37,7 @@
 
         <p><strong>Correo de contacto:</strong> <a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a></p>
 
-        
+
         <aside id="Horario de atención">
             <h2>Horario de atención</h2>
             <dl>
@@ -61,16 +66,14 @@
 
                     <p>
                         <label for="nombre">Nombre completo *</label>
-                        <input type="text" id="nombre" name="nombre" autocomplete="name"
-                            required minlength="3"
+                        <input type="text" id="nombre" name="nombre" autocomplete="name" required minlength="3"
                             title="Escribe al menos 3 caracteres">
                     </p>
 
                     <p>
                         <label for="documento">Documento *</label>
-                        <input type="text" id="documento" name="documento" inputmode="numeric"
-                            required pattern="[0-9]{6,10}"
-                            placeholder="Solo números, 6 a 10 dígitos"
+                        <input type="text" id="documento" name="documento" inputmode="numeric" required
+                            pattern="[0-9]{6,10}" placeholder="Solo números, 6 a 10 dígitos"
                             title="Solo números, entre 6 y 10 dígitos. Ejemplo: 1234567">
                     </p>
 
@@ -81,10 +84,8 @@
 
                     <p>
                         <label for="celular">Celular *</label>
-                        <input type="tel" id="celular" name="celular" inputmode="numeric"
-                            autocomplete="tel-national"
-                            required pattern="3[0-9]{9}"
-                            placeholder="10 dígitos, empieza por 3"
+                        <input type="tel" id="celular" name="celular" inputmode="numeric" autocomplete="tel-national"
+                            required pattern="3[0-9]{9}" placeholder="10 dígitos, empieza por 3"
                             title="10 dígitos y debe empezar por 3. Ejemplo: 3001234567">
                     </p>
 
@@ -107,11 +108,11 @@
                     </p>
                 </fieldset>
 
-                
+
                 <fieldset>
                     <legend>Tu alquiler</legend>
 
-                    
+
                     <fieldset>
                         <legend>Tipo de bicicleta *</legend>
                         <p>
@@ -140,15 +141,13 @@
 
                     <p>
                         <label for="fecha">Fecha del alquiler *</label>
-                        <input type="date" id="fecha" name="fecha"
-                            required min="2026-11-01" max="2026-12-31"
+                        <input type="date" id="fecha" name="fecha" required min="2026-11-01" max="2026-12-31"
                             title="Elige una fecha entre el 1 de noviembre y el 31 de diciembre de 2026">
                     </p>
 
                     <p>
                         <label for="cantidad">Cantidad de bicicletas (1 a 6) *</label>
-                        <input type="number" id="cantidad" name="cantidad"
-                            required min="1" max="6" step="1"
+                        <input type="number" id="cantidad" name="cantidad" required min="1" max="6" step="1"
                             title="Elige un número entero entre 1 y 6">
                     </p>
 
