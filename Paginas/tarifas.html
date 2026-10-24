@@ -7,13 +7,13 @@
     <meta name="description"
         content="Aquí se encuentran las tarifas de alquiler de bicicletas en Medellín, con opciones flexibles para adaptarse a tus necesidades.">
     <meta name="author" content="Nodo Digital">
+    <title>Tarifas y rutas | Rueda Libre</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
-    <title>Tarifas y rutas | Rueda Libre</title>
-
 </head>
 
 <body>
@@ -25,10 +25,10 @@
         <p>En Rueda Libre, ofrecemos tarifas competitivas y flexibles para adaptarnos a tus necesidades. A
             continuación, encontrarás nuestras tarifas de alquiler de bicicletas:</p>
 
-        <nav id="Principal">
-            <ul>
+        <nav aria-label="Principal">
+            <ul id="menu">
                 <li><a href="../index.html">Inicio</a></li>
-                <li><a href="tarifas.html" aria-current="page">Tarifas y rutas</a></li>
+                <li><a href="tarifas.html" class="activo" aria-current="page">Tarifas y rutas</a></li>
                 <li><a href="reservas.html">Reservas</a></li>
             </ul>
         </nav>
@@ -37,7 +37,7 @@
     <main id="contenido">
         <section>
             <h2>Tarifas de alquiler de bicicletas</h2>
-            <a href="reservas.html">Reservar una bicicleta</a>
+            <a href="reservas.html" class="boton-cta">Reservar una bicicleta</a>
             <br>
             <br>
             <table>
@@ -113,11 +113,11 @@
                 </tbody>
             </table>
             <br>
-            <a href="reservas.html">Reservar un recorrido guiado</a>
+            <a href="reservas.html" class="boton-cta">Reservar un recorrido guiado</a>
         </section>
 
 
-        <aside id="Información adicional del cliente">
+        <aside aria-label="Información adicional del cliente">
             <p>Información adicional del cliente: casco y candado incluidos, los horarios de salida son de 8:00 a 18:00
                 horas.</p>
 

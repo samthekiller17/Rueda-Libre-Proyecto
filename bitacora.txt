@@ -45,23 +45,23 @@ Justificaciones:
 
 Reservas sin errores:Validacion y teclado
 
-|Campo--------|Dato de prueba|------------|Resultado esperado|-----------------|Resultado obtenido|
-|-------------|--------------|------------|------------------|-----------------|------------------|
-|Nombre-------|Al            |------------|Bloquea el envío: mínimo 3          |Porfavor ingrese minimo 3 caracteres
-|Documento----|12345         |------------|Bloquea: muestra el title           |Solo numeros entre 6 y 10 digitos
-|Documento----|12ab5678      |------------|Bloquea: muestra el title	       |Solo numeros entre 6 y 10 digitos
-|Documento----|1234567       |------------|Acepta                              |Acepta
-|Correo-------|samuel@       |------------|Bloquea: formato de correo inválido |Porfavor ingrese un email valido
-|Celular------|1234567890    |------------|Bloquea: no empieza por 3           |10 digitos y debe de empezar por 3
-|Celular------|300123        |------------|Bloquea: menos de 10 dígitos	       |10 digitos y debe de empezar por 3
-|Celular------|3001234567    |------------|Acepta                              |Acepta
-|Fecha--------|2026-10-31    |------------|Bloquea: anterior al mínimo         |No deja modificar esa fecha incorrecta
-|Fecha--------|2027-01-01    |------------|Bloquea: posterior al máximo        |No deja modificar esa fecha incorrecta
-|Cantidad-----|0 y 7         |------------|Bloquea ambos                       |No deja modificar
-|Tipodebicileta Ninguno seleccionado|-----|Bloquea: elige una opción           |Elije una opcion
-|plan---------|“Selecciona un plan”|------|Bloquea: campo obligatorio	       |Campo obligatorio
-|Politicas----|Casilla sin marcar|--------|Bloquea: debes marcarla             |Selecciona una casilla
-|Comentarios--|Escribirmásde300caracteres-|No deja escribir más de 300         |No deja escribir mas de 300 caracteres
+|Campo--------|Dato de prueba|--------------------|Resultado esperado|-----------------|Resultado obtenido|
+|-------------|--------------|--------------------|------------------|-----------------|------------------|
+|Nombre-------|Al            |--------------------|Bloquea el envío: mínimo 3          |Porfavor ingrese minimo 3 caracteres
+|Documento----|12345         |--------------------|Bloquea: muestra el title           |Solo numeros entre 6 y 10 digitos
+|Documento----|12ab5678      |--------------------|Bloquea: muestra el title	       |Solo numeros entre 6 y 10 digitos
+|Documento----|1234567       |--------------------|Acepta                              |Acepta
+|Correo-------|samuel@       |--------------------|Bloquea: formato de correo inválido |Porfavor ingrese un email valido
+|Celular------|1234567890    |--------------------|Bloquea: no empieza por 3           |10 digitos y debe de empezar por 3
+|Celular------|300123        |--------------------|Bloquea: menos de 10 dígitos	       |10 digitos y debe de empezar por 3
+|Celular------|3001234567    |--------------------|Acepta                              |Acepta
+|Fecha--------|2026-10-31    |--------------------|Bloquea: anterior al mínimo         |No deja modificar esa fecha incorrecta
+|Fecha--------|2027-01-01    |--------------------|Bloquea: posterior al máximo        |No deja modificar esa fecha incorrecta
+|Cantidad-----|0 y 7         |--------------------|Bloquea ambos                       |No deja modificar
+|Tipodebicileta Ninguno seleccionado|-------------|Bloquea: elige una opción           |Elije una opcion
+|plan---------|“Selecciona un plan”|--------------|Bloquea: campo obligatorio	       |Campo obligatorio
+|Politicas----|Casilla sin marcar|----------------|Bloquea: debes marcarla             |Selecciona una casilla
+|Comentarios--|Escribirmásde300caracteres---------|No deja escribir más de 300         |No deja escribir mas de 300 caracteres
 
 Rueda libre v.02 en Linea: accesible y publicada
 
@@ -76,3 +76,23 @@ Rueda libre v.02 en Linea: accesible y publicada
 |Botones secundarios y destacados|Fondo Naranja Pedal con texto Azul Noche
 |Naranja Pedal-------------------|Nunca como color de texto ni con texto blanco. Solo como fondo o como adorno.
 
+La identidad de Rueda Libre:
+
+Propiedades que se heredan: 
+
+- En la pestaña de styles aparece el bloque "inherited from body" con el color: var(color azul noche).
+- Que muestra computed: color: rgb(20,33,61).
+- El <p> no tiene ninguna regla propia de color, al quitar el color al body el texto se cambio al color negro
+
+Propiedades que no se heredan:
+
+- En styles no aparece el backgroud-color bajo "inherited from body".
+- El backgroud-color: rgba (0,0,0,0), literalmente trasparente
+- El <p> no tiene fondo propio, El color crema que se ve detras es el fondo de body.
+
+Navegacion con estados y sin conflictos:
+
+Conflicto de la clase .activo:
+
+- El enlace de la pagina actual no se veia distinto de los demas, aunque tenia su estilo
+- Lo arregle escribiendo #menu a.activo que ahora es la mas fuerte

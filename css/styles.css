@@ -1,8 +1,3 @@
-/* ==========================================================
-   Rueda Libre — hoja de estilos global
-   ========================================================== */
-
-/* ---------- Variables globales ---------- */
 :root {
     /* Paleta de marca */
     --color-verde-ruta: #1E7A4F;
@@ -11,21 +6,21 @@
     --color-crema: #FAF6EF;
     --color-gris-asfalto: #5B6470;
 
-    /* Blanco: solo para texto sobre Azul Noche y Verde Ruta */
+
     --color-blanco: #FFFFFF;
 
-    /* Tipografías, con fuentes de respaldo */
+
     --fuente-titulos: "Montserrat", Arial, Helvetica, sans-serif;
     --fuente-texto: "Open Sans", Arial, Helvetica, sans-serif;
 
-    /* Escala de espaciado */
+
     --espacio-xs: 0.5rem;
     --espacio-s: 1rem;
     --espacio-m: 1.5rem;
     --espacio-l: 2.5rem;
 }
 
-/* ---------- Base: todo lo demás hereda de aquí ---------- */
+
 body {
     margin: 0;
     font-family: var(--fuente-texto);
@@ -34,12 +29,12 @@ body {
     line-height: 1.6;
 }
 
-/* Un solo selector agrupado para todos los encabezados */
+
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--fuente-titulos);
 }
 
-/* ---------- Encabezado y pie: Azul Noche con texto blanco (15.97:1) ---------- */
+
 header,
 footer {
     background-color: var(--color-azul-noche);
@@ -47,7 +42,7 @@ footer {
     padding: var(--espacio-s) var(--espacio-l);
 }
 
-/* Naranja Pedal solo como adorno, nunca como texto */
+
 header {
     border-bottom: 0.25rem solid var(--color-naranja-pedal);
 }
@@ -56,31 +51,120 @@ main {
     padding: var(--espacio-m) var(--espacio-l);
 }
 
-/* ---------- Enlaces: Verde Ruta sobre Crema (4.93:1) ---------- */
+
 a {
     color: var(--color-verde-ruta);
     text-decoration: underline;
 }
 
-/* Sobre Azul Noche, los enlaces van en blanco (15.97:1) */
+
+a:hover {
+    color: var(--color-azul-noche);
+    text-decoration-thickness: 0.2em;
+}
+
+
 header a,
 footer a {
     color: var(--color-blanco);
 }
 
-/* ---------- Imágenes ---------- */
+
+header a:hover,
+header a:focus,
+footer a:hover,
+footer a:focus {
+    background-color: var(--color-naranja-pedal);
+    color: var(--color-azul-noche);
+}
+
+
+:focus {
+    outline: 0.1875rem solid var(--color-azul-noche);
+    outline-offset: 0.125rem;
+}
+
+
+header :focus,
+footer :focus {
+    outline-color: var(--color-blanco);
+}
+
+
+#menu {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espacio-xs);
+    margin: var(--espacio-s) 0;
+    padding: var(--espacio-xs);
+    background-color: var(--color-crema);
+}
+
+
+#menu a {
+    display: inline-block;
+    padding: var(--espacio-xs) var(--espacio-s);
+    color: var(--color-gris-asfalto);
+    text-decoration: none;
+    border-bottom: 0.1875rem solid transparent;
+}
+
+
+#menu a.activo {
+    color: var(--color-verde-ruta);
+    font-weight: 700;
+    border-bottom-color: var(--color-verde-ruta);
+}
+
+
+#menu a:hover,
+#menu a:focus {
+    background-color: var(--color-naranja-pedal);
+    color: var(--color-azul-noche);
+}
+
+
+#menu a:focus {
+    outline-color: var(--color-azul-noche);
+}
+
+
+.boton-cta {
+    display: inline-block;
+    padding: var(--espacio-xs) var(--espacio-m);
+    background-color: var(--color-verde-ruta);
+    color: var(--color-blanco);
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 0.25rem;
+}
+
+
+.boton-cta:hover {
+    background-color: var(--color-naranja-pedal);
+    color: var(--color-azul-noche);
+}
+
+
+.boton-cta:focus {
+    background-color: var(--color-azul-noche);
+    color: var(--color-blanco);
+}
+
+
 img {
     max-width: 100%;
     height: auto;
 }
 
-/* ---------- Tablas ---------- */
+
 table {
     border-collapse: collapse;
 }
 
 caption {
-    color: var(--color-gris-asfalto); /* texto secundario: 5.57:1 sobre Crema */
+    color: var(--color-gris-asfalto); 
     text-align: left;
     padding-bottom: var(--espacio-xs);
 }
@@ -97,8 +181,8 @@ thead th {
     color: var(--color-blanco);
 }
 
-/* ---------- Formulario ---------- */
-/* Los controles no heredan la fuente por defecto: se fuerza la herencia */
+
+
 input,
 select,
 textarea,
@@ -107,11 +191,49 @@ button {
     font-size: 1rem;
 }
 
-/* Botón principal: blanco sobre Verde Ruta (5.31:1) */
+
+input,
+select,
+textarea {
+    padding: var(--espacio-xs);
+    color: var(--color-azul-noche);
+    background-color: var(--color-blanco);
+    border: 1px solid var(--color-gris-asfalto);
+}
+
+
+input:hover,
+select:hover,
+textarea:hover {
+    border-color: var(--color-verde-ruta);
+}
+
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 0.1875rem solid var(--color-verde-ruta);
+    outline-offset: 0.125rem;
+    border-color: var(--color-verde-ruta);
+}
+
+
 button {
     background-color: var(--color-verde-ruta);
     color: var(--color-blanco);
     border: 0;
     padding: var(--espacio-xs) var(--espacio-m);
     cursor: pointer;
+}
+
+
+button:hover {
+    background-color: var(--color-naranja-pedal);
+    color: var(--color-azul-noche);
+}
+
+
+button:focus {
+    background-color: var(--color-azul-noche);
+    color: var(--color-blanco);
 }
