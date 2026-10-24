@@ -1,8 +1,6 @@
 /* ==========================================================
-   Rueda Libre — hoja de estilos global
+   1. VARIABLES
    ========================================================== */
-
-/* ---------- Variables globales ---------- */
 :root {
     /* Paleta de marca */
     --color-verde-ruta: #1E7A4F;
@@ -10,29 +8,32 @@
     --color-azul-noche: #14213D;
     --color-crema: #FAF6EF;
     --color-gris-asfalto: #5B6470;
-
-    /* Blanco: solo para texto sobre Azul Noche y Verde Ruta, y fondo de campos */
     --color-blanco: #FFFFFF;
 
-    /* Tipografías, con fuentes de respaldo */
+
     --fuente-titulos: "Montserrat", Arial, Helvetica, sans-serif;
     --fuente-texto: "Open Sans", Arial, Helvetica, sans-serif;
 
-    /* Escala de espaciado */
+
     --espacio-xs: 0.5rem;
     --espacio-s: 1rem;
     --espacio-m: 1.5rem;
     --espacio-l: 2.5rem;
 }
 
-/* ---------- Box model: el ancho incluye relleno y borde ---------- */
+
+/* ==========================================================
+   2. BASE
+   ========================================================== */
+
+
 *,
 *::before,
 *::after {
     box-sizing: border-box;
 }
 
-/* ---------- Base: todo lo demás hereda de aquí ---------- */
+/* Todo lo demás hereda de aquí */
 body {
     margin: 0;
     font-family: var(--fuente-texto);
@@ -41,56 +42,103 @@ body {
     line-height: 1.6;
 }
 
-/* Un solo selector agrupado para todos los encabezados */
-h1, h2, h3, h4, h5, h6 {
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--fuente-titulos);
 }
 
-/* ---------- Encabezado y pie: Azul Noche con texto blanco (15.97:1) ---------- */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+a {
+    color: var(--color-verde-ruta);
+    text-decoration: underline;
+}
+
+a:hover {
+    color: var(--color-azul-noche);
+    text-decoration-thickness: 0.2em;
+}
+
+
+:focus {
+    outline: 0.1875rem solid var(--color-azul-noche);
+    outline-offset: 0.125rem;
+}
+
+
+header :focus,
+footer :focus {
+    outline-color: var(--color-blanco);
+}
+
+
+/* ==========================================================
+   3. ESTRUCTURA
+   ========================================================== */
+
+
 header,
 footer {
     background-color: var(--color-azul-noche);
     color: var(--color-blanco);
-    padding: var(--espacio-s) var(--espacio-l);
+    padding: var(--espacio-s) max(var(--espacio-l), calc((100% - 50rem) / 2 + var(--espacio-l)));
 }
 
-/* Naranja Pedal solo como adorno, nunca como texto */
+
 header {
     border-bottom: 0.25rem solid var(--color-naranja-pedal);
 }
 
-/* Contenido principal: ancho máximo en rem y centrado con márgenes automáticos */
+header img {
+    width: 12rem;
+}
+
+header h1 {
+    margin: var(--espacio-s) 0 var(--espacio-xs);
+}
+
+header p {
+    margin: 0 0 var(--espacio-s);
+}
+
+
+footer {
+    padding-bottom: 5rem;
+}
+
+
 main {
     max-width: 50rem;
     margin: 0 auto;
     padding: var(--espacio-m) var(--espacio-l);
 }
 
-/* Portada de inicio: altura mínima relativa a la ventana */
+
 .portada {
     min-height: 50vh;
 }
 
-/* ---------- Enlaces ---------- */
-/* Enlace normal: Verde Ruta sobre Crema (4.93:1) */
-a {
-    color: var(--color-verde-ruta);
-    text-decoration: underline;
-}
 
-/* Hover: Azul Noche sobre Crema (14.83:1) y subrayado más grueso */
-a:hover {
-    color: var(--color-azul-noche);
-    text-decoration-thickness: 0.2em;
-}
+/* ==========================================================
+   4. NAVEGACIÓN
+   ========================================================== */
 
-/* Sobre Azul Noche, los enlaces van en blanco (15.97:1) */
+
 header a,
 footer a {
     color: var(--color-blanco);
 }
 
-/* Hover y foco sobre Azul Noche: fondo Naranja con texto Azul Noche (7.20:1) */
+
 header a:hover,
 header a:focus,
 footer a:hover,
@@ -99,21 +147,7 @@ footer a:focus {
     color: var(--color-azul-noche);
 }
 
-/* ---------- Indicador de foco (nunca se deja sin contorno) ---------- */
-/* Por defecto: contorno Azul Noche sobre Crema (14.83:1) */
-:focus {
-    outline: 0.1875rem solid var(--color-azul-noche);
-    outline-offset: 0.125rem;
-}
 
-/* Sobre Azul Noche el contorno va en blanco (15.97:1) */
-header :focus,
-footer :focus {
-    outline-color: var(--color-blanco);
-}
-
-/* ---------- Menú principal ---------- */
-/* La barra del menú es Crema, para poder usar Gris Asfalto y Verde Ruta */
 #menu {
     list-style: none;
     margin: var(--espacio-s) 0;
@@ -121,13 +155,13 @@ footer :focus {
     background-color: var(--color-crema);
 }
 
-/* Opciones en una fila: cada li se comporta como bloque en línea */
+
 #menu li {
     display: inline-block;
     margin-right: var(--espacio-xs);
 }
 
-/* Enlace del menú: Gris Asfalto sobre Crema (5.57:1). Especificidad (1,0,1) */
+
 #menu a {
     display: inline-block;
     padding: var(--espacio-xs) var(--espacio-s);
@@ -136,29 +170,38 @@ footer :focus {
     border-bottom: 0.1875rem solid transparent;
 }
 
-/* Página actual: Verde Ruta sobre Crema (4.93:1). Especificidad (1,1,1).
-   Va ANTES de :hover/:focus para que estos ganen por orden cuando empatan. */
+
 #menu a.activo {
     color: var(--color-verde-ruta);
     font-weight: 700;
     border-bottom-color: var(--color-verde-ruta);
 }
 
-/* Hover y foco del menú: Azul Noche sobre Naranja Pedal (7.20:1). Especificidad (1,1,1) */
+
 #menu a:hover,
 #menu a:focus {
     background-color: var(--color-naranja-pedal);
     color: var(--color-azul-noche);
 }
 
-/* El contorno del menú va sobre Crema, así que vuelve a Azul Noche (1,1,1) */
+
 #menu a:focus {
     outline-color: var(--color-azul-noche);
 }
 
-/* ---------- Tarjetas de servicio ---------- */
-/* width: 100% hace que el efecto de box-sizing sea medible en DevTools */
+.menu-interno a {
+    display: inline-block;
+    margin: 0 var(--espacio-m) var(--espacio-xs) 0;
+}
+
+
+/* ==========================================================
+   5. COMPONENTES
+   ========================================================== */
+
+
 .tarjeta {
+    position: relative;
     width: 100%;
     margin-bottom: var(--espacio-m);
     padding: var(--espacio-m);
@@ -170,7 +213,7 @@ footer :focus {
     margin-top: 0;
 }
 
-/* La imagen ocupa todo el ancho útil de la tarjeta */
+
 .tarjeta img {
     display: block;
     width: 100%;
@@ -179,9 +222,23 @@ footer :focus {
     border-radius: 0.25rem;
 }
 
-/* ---------- Enlaces de llamada a la acción ---------- */
-/* Blanco sobre Verde Ruta (5.31:1) */
-.boton-cta {
+
+.etiqueta-nuevo {
+    position: absolute;
+    top: 0;
+    right: var(--espacio-m);
+    padding: 0 var(--espacio-xs);
+    background-color: var(--color-naranja-pedal);
+    color: var(--color-azul-noche);
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    border-radius: 0 0 0.25rem 0.25rem;
+}
+
+
+button,
+.boton-cta,
+.boton-whatsapp {
     display: inline-block;
     padding: var(--espacio-s) var(--espacio-l);
     background-color: var(--color-verde-ruta);
@@ -191,26 +248,44 @@ footer :focus {
     border-radius: 0.25rem;
 }
 
-/* Hover: Azul Noche sobre Naranja Pedal (7.20:1).
-   (0,2,0) supera a a:hover (0,1,1), si no el color volvería al Azul Noche de a:hover sobre fondo verde */
-.boton-cta:hover {
+button {
+    border: 0;
+    cursor: pointer;
+}
+
+
+button:hover,
+.boton-cta:hover,
+.boton-whatsapp:hover {
     background-color: var(--color-naranja-pedal);
     color: var(--color-azul-noche);
 }
 
-/* Foco: Blanco sobre Azul Noche (15.97:1) más el contorno global */
-.boton-cta:focus {
+
+button:focus,
+.boton-cta:focus,
+.boton-whatsapp:focus {
     background-color: var(--color-azul-noche);
     color: var(--color-blanco);
 }
 
-/* ---------- Imágenes ---------- */
-img {
-    max-width: 100%;
-    height: auto;
+
+.boton-whatsapp {
+    position: fixed;
+    right: var(--espacio-s);
+    bottom: var(--espacio-s);
+    z-index: 10;
+    padding: var(--espacio-xs) var(--espacio-m);
+    border: 2px solid var(--color-blanco);
+    
 }
 
-/* ---------- Tablas ---------- */
+
+.boton-whatsapp:focus {
+    box-shadow: 0 0 0 0.5rem var(--color-blanco);
+}
+
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -218,7 +293,7 @@ table {
 }
 
 caption {
-    color: var(--color-gris-asfalto); /* texto secundario: 5.57:1 sobre Crema */
+    color: var(--color-gris-asfalto);
     text-align: left;
     padding-bottom: var(--espacio-xs);
 }
@@ -230,14 +305,34 @@ td {
     text-align: left;
 }
 
-/* Encabezados con fondo de marca: Blanco sobre Azul Noche (15.97:1) */
+
 thead th {
     background-color: var(--color-azul-noche);
     color: var(--color-blanco);
 }
 
-/* ---------- Formulario ---------- */
-/* Los controles no heredan la fuente por defecto: se fuerza la herencia */
+.enlace-saltar {
+    position: absolute;
+    top: -6rem;
+    left: var(--espacio-s);
+    z-index: 20;
+    padding: var(--espacio-xs) var(--espacio-m);
+}
+
+
+.enlace-saltar:focus {
+    top: var(--espacio-xs);
+    background-color: var(--color-naranja-pedal);
+    color: var(--color-azul-noche);
+    outline-color: var(--color-blanco);
+}
+
+
+/* ==========================================================
+   6. FORMULARIO
+   ========================================================== */
+
+
 input,
 select,
 textarea,
@@ -246,7 +341,7 @@ button {
     font-size: 1rem;
 }
 
-/* Grupos separados */
+
 fieldset {
     margin: 0 0 var(--espacio-l);
     padding: var(--espacio-m);
@@ -263,14 +358,14 @@ fieldset p {
     margin: 0 0 var(--espacio-s);
 }
 
-/* Cada etiqueta sobre su campo */
+
 label {
     display: block;
     margin-bottom: var(--espacio-xs);
     font-weight: 700;
 }
 
-/* Campos a todo el ancho disponible: Azul Noche sobre blanco, borde Gris Asfalto */
+
 input,
 select,
 textarea {
@@ -286,7 +381,7 @@ textarea {
     resize: vertical;
 }
 
-/* Radios y casillas: control y etiqueta en la misma línea */
+
 .opcion input {
     display: inline-block;
     width: auto;
@@ -299,42 +394,18 @@ textarea {
     font-weight: 400;
 }
 
-/* Hover del campo: el borde pasa a Verde Ruta */
+
 input:hover,
 select:hover,
 textarea:hover {
     border-color: var(--color-verde-ruta);
 }
 
-/* Foco del campo: contorno Verde Ruta grueso (4.93:1 sobre Crema) que reemplaza al del navegador */
+
 input:focus,
 select:focus,
 textarea:focus {
     outline: 0.1875rem solid var(--color-verde-ruta);
     outline-offset: 0.125rem;
     border-color: var(--color-verde-ruta);
-}
-
-/* Botón de envío: Blanco sobre Verde Ruta (5.31:1), con relleno generoso */
-button {
-    display: inline-block;
-    padding: var(--espacio-s) var(--espacio-l);
-    background-color: var(--color-verde-ruta);
-    color: var(--color-blanco);
-    font-weight: 700;
-    border: 0;
-    border-radius: 0.25rem;
-    cursor: pointer;
-}
-
-/* Hover: Azul Noche sobre Naranja Pedal (7.20:1) */
-button:hover {
-    background-color: var(--color-naranja-pedal);
-    color: var(--color-azul-noche);
-}
-
-/* Foco: Blanco sobre Azul Noche (15.97:1) más el contorno global */
-button:focus {
-    background-color: var(--color-azul-noche);
-    color: var(--color-blanco);
 }

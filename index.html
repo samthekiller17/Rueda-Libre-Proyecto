@@ -11,19 +11,20 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-    <a href="#contenido">Saltar al contenido principal</a>
+    <a href="#contenido" class="boton-cta enlace-saltar">Saltar al contenido principal</a>
 
     <header>
         <img src="img/Icono_Rueda_Libre.jpg" alt="Logo de Rueda Libre" width="300">
         <h1>Rueda Libre</h1>
         <p>Bienvenidos a Rueda Libre, un lugar lleno de bicicletas</p>
 
-        <!-- Navegación principal del sitio -->
+
         <nav aria-label="Principal">
             <ul id="menu">
                 <li><a href="index.html" class="activo" aria-current="page">Inicio</a></li>
@@ -32,12 +33,12 @@
             </ul>
         </nav>
 
-        <!-- Navegación interna de esta página -->
-        <nav aria-label="En esta página">
+
+        <nav aria-label="En esta página" class="menu-interno">
+            <a href="#quienes-somos">¿Quiénes somos?</a>
             <a href="#servicios">Nuestros servicios</a>
             <a href="#como-alquilar">¿Cómo alquilar?</a>
             <a href="#encuentranos">Encuéntranos</a>
-            <a href="#quienes-somos">¿Quiénes somos?</a>
         </nav>
     </header>
 
@@ -47,8 +48,7 @@
         <section id="quienes-somos" class="portada">
             <h2>¿Quiénes somos?</h2>
             <p>Somos una empresa de alquiler de <strong>bicicletas en Medellín</strong>, comprometida a ofrecer una
-                experiencia única de exploración urbana.</p>
-            <!-- AJUSTAR el alt a lo que muestre la imagen -->
+                experiencia única de exploración urbana. <a href="#encuentranos">Encuentra dónde estamos</a>.</p>
             <img src="img/Portada.jpg" alt="Ciclistas recorriendo una calle de Medellín" width="500">
         </section>
 
@@ -69,10 +69,16 @@
             </article>
 
             <article class="tarjeta">
-                <!-- AJUSTAR el alt a lo que muestre la imagen -->
+                <strong class="etiqueta-nuevo">Nuevo</strong>
+                <h4>Bicicletas eléctricas</h4>
+                <p>Disponibles por hora, medio día o día completo</p>
+            </article>
+
+            <article class="tarjeta">
                 <img src="img/Ruta.jpg" alt="Ruta para bicicletas entre parques y calles de la ciudad" width="500">
                 <h4>Rutas guiadas</h4>
-                <p>Por la ciudad y sus alrededores</p>
+                <p>Por la ciudad y sus alrededores. <a href="Paginas/tarifas.html#recorridos">Ver tarifas de los
+                        recorridos</a></p>
             </article>
 
             <article class="tarjeta">
@@ -85,7 +91,8 @@
 
         <section id="como-alquilar">
             <h2>¿Cómo alquilar?</h2>
-            <p>Para alquilar una bicicleta, simplemente acércate a cualquiera de nuestros puntos de alquiler y muestra tu
+            <p>Para alquilar una bicicleta, simplemente acércate a cualquiera de nuestros puntos de alquiler y muestra
+                tu
                 identificación.<strong> Te guiaremos para seleccionar la bicicleta que mejor se adapte a tus
                     necesidades.</strong></p>
 
@@ -96,7 +103,6 @@
                 <li>Selecciona la bicicleta que mejor se adapte a tus necesidades</li>
                 <li>Retira la bicicleta y disfruta de tu experiencia</li>
             </ol>
-            <!-- AJUSTAR el alt a lo que muestre la imagen -->
             <img src="img/Bicicleta.jpg" alt="Bicicleta lista para alquilar" width="500">
         </section>
 
@@ -120,6 +126,8 @@
     <footer>
         <p>Rueda Libre | Correo: <a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a> | 2026</p>
     </footer>
+    <a href="https://wa.me/573000000000" class="boton-whatsapp" target="_blank" rel="noopener noreferrer"
+        aria-label="WhatsApp (se abre en una pestaña nueva)">WhatsApp</a>
 </body>
 
 </html>

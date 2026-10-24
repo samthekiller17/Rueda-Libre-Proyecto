@@ -108,4 +108,41 @@ Valores antes y despues de cambiar box-sizing:
 |border-box (despues)                     | 670 px                | 48 px               | 2 px              | 720 px         |
 |-----------------------------------------|-----------------------|---------------------|-------------------|----------------|
 
-Observe que con content box, el ancho solo cuenta con el contenido y el relleno y el borde se suman por fuera, la tarjeta media 850 px, media mas que su contenido. Con el border-box el ancho ya incluye el relleno y el borde, la tarjeta mide 720 px.
+Observe que con content box, el ancho solo cuenta con el contenido y el relleno y el borde se suman por fuera,
+la tarjeta media 850 px, media mas que su contenido. Con el border-box el ancho ya incluye el relleno y el borde, la tarjeta mide 720 px.
+
+
+BITÁCORA FINAL - RUEDA LIBRE v1.0
+
+DÍA 1: ARMAR EL SITIO
+- MiniReto 1: Creé la carpeta, inicié Git y subí el repositorio a GitHub. Hice el index.html base.
+  La página abre en http://127.0.0.1:5500/index.html
+- MiniReto 2: Organicé el inicio con títulos, secciones, listas, imágenes y enlaces.
+- MiniReto 3: Hice la página de tarifas con dos tablas.
+- MiniReto 4: Creé la página de reservas y puse el mismo menú y pie en las tres páginas (v0.1).
+
+DÍA 2: ESTRUCTURA, FORMULARIO Y ACCESIBILIDAD
+- MiniReto 5: Cambié la estructura a etiquetas semánticas (header, nav, main, section, article,
+  aside, footer). No usé div ni span.
+- MiniReto 6: Hice el formulario de reserva con tres grupos de campos.
+- MiniReto 7: Le puse validaciones según las reglas del cliente y lo probé con datos malos.
+- MiniReto 8: Revisé la accesibilidad (alt, enlaces, teclado) y el contraste de los colores.
+  Blanco sobre naranja y naranja sobre crema NO sirven para texto. Publiqué el sitio en
+  GitHub Pages: [https://samthekiller17.github.io/Rueda-Libre-Proyecto/].
+
+DÍA 3: DISEÑO
+- MiniReto 9: Creé styles.css con variables de colores, fuentes y espacios.
+  Aprendí que color se hereda del body y background-color no.
+- MiniReto 10: Arreglé el menú, La clase .activo no funcionaba porque #menu a (1,0,1)=
+ (tiene 1 id (#menu), 0 clases y 1 etiqueta (a))
+ pesa más que .activo (0,1,0) (es (0, 1, 0): tiene 0 ids, 1 clase y 0 etiquetas.).
+ Lo resolví con #menu a.activo (1,1,1) (es (1, 1, 1): tiene 1 id, 1 clase (.activo) y 1 etiqueta (a).),
+ sin !important.
+- MiniReto 11: Apliqué box-sizing: border-box, tarjetas y formularios ordenados.
+  Una tarjeta medía 850 px con content-box y 720 px con border-box.
+- MiniReto 12: Puse la etiqueta "Nuevo", el botón fijo de WhatsApp y ordené el CSS por secciones (v1.0).
+
+LO QUE MEJORARÍA
+- Conectar el formulario a un servidor para que las reservas lleguen de verdad.
+- Hacer que el sitio se vea bien en celulares.
+- Poner descripciones exactas en las fotos.
