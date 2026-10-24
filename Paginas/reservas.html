@@ -10,13 +10,15 @@
 </head>
 
 <body>
+     <a href="#contenido">Saltar al contenido principal</a>
+
     <header>
-        <img src="../img/Icono_Rueda_Libre.jpg" alt="Icono rueda libre" width="300">
+        <img src="../img/Icono_Rueda_Libre.jpg" alt="Logo de Rueda Libre" width="300">
         <nav aria-label="Principal">
             <ul>
                 <li><a href="../index.html">Inicio</a></li>
                 <li><a href="tarifas.html">Tarifas y rutas</a></li>
-                <li><a href="reservas.html">Reservas</a></li>
+                <li><a href="reservas.html" aria-current="page">Reservas</a></li>
             </ul>
         </nav>
     </header>
@@ -30,8 +32,8 @@
 
         <p><strong>Correo de contacto:</strong> <a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a></p>
 
-        <!-- Contenido complementario: horario de atención -->
-        <aside aria-label="Horario de atención">
+        
+        <aside id="Horario de atención">
             <h2>Horario de atención</h2>
             <dl>
                 <dt>Lunes a Viernes</dt>
@@ -51,15 +53,25 @@
             <h2>Formulario de reserva</h2>
             <p>Los campos marcados con * son obligatorios.</p>
 
+
             <form action="#" method="post">
 
-                <!-- Grupo 1: datos del cliente -->
                 <fieldset>
                     <legend>Tus datos</legend>
 
                     <p>
                         <label for="nombre">Nombre completo *</label>
-                        <input type="text" id="nombre" name="nombre" autocomplete="name" required>
+                        <input type="text" id="nombre" name="nombre" autocomplete="name"
+                            required minlength="3"
+                            title="Escribe al menos 3 caracteres">
+                    </p>
+
+                    <p>
+                        <label for="documento">Documento *</label>
+                        <input type="text" id="documento" name="documento" inputmode="numeric"
+                            required pattern="[0-9]{6,10}"
+                            placeholder="Solo números, 6 a 10 dígitos"
+                            title="Solo números, entre 6 y 10 dígitos. Ejemplo: 1234567">
                     </p>
 
                     <p>
@@ -68,10 +80,12 @@
                     </p>
 
                     <p>
-                        <label for="celular">Celular</label>
-                        <input type="tel" id="celular" name="celular" autocomplete="tel-national"
-                            placeholder="10 dígitos, empieza por 3" pattern="3[0-9]{9}"
-                            title="10 dígitos, empezando por 3">
+                        <label for="celular">Celular *</label>
+                        <input type="tel" id="celular" name="celular" inputmode="numeric"
+                            autocomplete="tel-national"
+                            required pattern="3[0-9]{9}"
+                            placeholder="10 dígitos, empieza por 3"
+                            title="10 dígitos y debe empezar por 3. Ejemplo: 3001234567">
                     </p>
 
                     <p>
@@ -93,11 +107,11 @@
                     </p>
                 </fieldset>
 
-                <!-- Grupo 2: detalles del alquiler -->
+                
                 <fieldset>
                     <legend>Tu alquiler</legend>
 
-                    <!-- Los tres radios comparten name="tipo_bicicleta": solo se puede elegir uno -->
+                    
                     <fieldset>
                         <legend>Tipo de bicicleta *</legend>
                         <p>
@@ -115,14 +129,9 @@
                     </fieldset>
 
                     <p>
-                        <label for="fecha">Fecha del alquiler *</label>
-                        <input type="date" id="fecha" name="fecha" required>
-                    </p>
-
-                    <p>
-                        <label for="duracion">Duración *</label>
-                        <select id="duracion" name="duracion" required>
-                            <option value="">Selecciona una duración</option>
+                        <label for="plan">Plan *</label>
+                        <select id="plan" name="plan" required>
+                            <option value="">Selecciona un plan</option>
                             <option value="1-hora">1 hora</option>
                             <option value="medio-dia">Medio día (4 h)</option>
                             <option value="dia-completo">Día completo (8 h)</option>
@@ -130,8 +139,17 @@
                     </p>
 
                     <p>
-                        <label for="cantidad">Número de bicicletas *</label>
-                        <input type="number" id="cantidad" name="cantidad" min="1" max="10" value="1" required>
+                        <label for="fecha">Fecha del alquiler *</label>
+                        <input type="date" id="fecha" name="fecha"
+                            required min="2026-11-01" max="2026-12-31"
+                            title="Elige una fecha entre el 1 de noviembre y el 31 de diciembre de 2026">
+                    </p>
+
+                    <p>
+                        <label for="cantidad">Cantidad de bicicletas (1 a 6) *</label>
+                        <input type="number" id="cantidad" name="cantidad"
+                            required min="1" max="6" step="1"
+                            title="Elige un número entero entre 1 y 6">
                     </p>
 
                     <p>
@@ -145,14 +163,13 @@
                     </p>
                 </fieldset>
 
-                <!-- Grupo 3: confirmación -->
                 <fieldset>
                     <legend>Confirmación</legend>
 
                     <p>
-                        <label for="comentarios">Comentarios</label>
+                        <label for="comentarios">Comentarios (máximo 300 caracteres)</label>
                         <textarea id="comentarios" name="comentarios" rows="4" maxlength="300"
-                            placeholder="Máximo 300 caracteres."></textarea>
+                            placeholder="Opcional"></textarea>
                     </p>
 
                     <p>
@@ -161,9 +178,8 @@
                     </p>
 
                     <p>
-                        <input type="checkbox" id="acepta-condiciones" name="acepta_condiciones" value="si" required>
-                        <label for="acepta-condiciones">Confirmo que los datos son correctos y llevaré mi identificación
-                            *</label>
+                        <input type="checkbox" id="acepta-politicas" name="acepta_politicas" value="si" required>
+                        <label for="acepta-politicas">Acepto las políticas de alquiler *</label>
                     </p>
                 </fieldset>
 

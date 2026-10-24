@@ -36,3 +36,43 @@ Página (inicio / tarifas / reservas)
 │   └── aside (solo tarifas y reservas)
 └── footer
 
+Formulario de reservas
+
+Justificaciones:
+- en los datos de usuario decidi poner un apartado de cuidad donde hay diferentes de estas de colombia
+- en tu alquiler agrege en tu alquiler la cantidad de bicicletas con tipo "number" para que se vea mas ordenada la seleccion de bicicletas
+- en el boton de enviar reserva puse post aunque no halla un servidor a donde enviar esto
+
+Reservas sin errores:Validacion y teclado
+
+|Campo--------|Dato de prueba|------------|Resultado esperado|-----------------|Resultado obtenido|
+|-------------|--------------|------------|------------------|-----------------|------------------|
+|Nombre-------|Al            |------------|Bloquea el envío: mínimo 3          |Porfavor ingrese minimo 3 caracteres
+|Documento----|12345         |------------|Bloquea: muestra el title           |Solo numeros entre 6 y 10 digitos
+|Documento----|12ab5678      |------------|Bloquea: muestra el title	       |Solo numeros entre 6 y 10 digitos
+|Documento----|1234567       |------------|Acepta                              |Acepta
+|Correo-------|samuel@       |------------|Bloquea: formato de correo inválido |Porfavor ingrese un email valido
+|Celular------|1234567890    |------------|Bloquea: no empieza por 3           |10 digitos y debe de empezar por 3
+|Celular------|300123        |------------|Bloquea: menos de 10 dígitos	       |10 digitos y debe de empezar por 3
+|Celular------|3001234567    |------------|Acepta                              |Acepta
+|Fecha--------|2026-10-31    |------------|Bloquea: anterior al mínimo         |No deja modificar esa fecha incorrecta
+|Fecha--------|2027-01-01    |------------|Bloquea: posterior al máximo        |No deja modificar esa fecha incorrecta
+|Cantidad-----|0 y 7         |------------|Bloquea ambos                       |No deja modificar
+|Tipodebicileta Ninguno seleccionado|-----|Bloquea: elige una opción           |Elije una opcion
+|plan---------|“Selecciona un plan”|------|Bloquea: campo obligatorio	       |Campo obligatorio
+|Politicas----|Casilla sin marcar|--------|Bloquea: debes marcarla             |Selecciona una casilla
+|Comentarios--|Escribirmásde300caracteres-|No deja escribir más de 300         |No deja escribir mas de 300 caracteres
+
+Rueda libre v.02 en Linea: accesible y publicada
+
+|Elemento------------------------|Combinacion--------------------|
+|--------------------------------|-------------------------------|
+|Fondo general-------------------|Crema #FAF6EF
+|Texto del cuerpo y títulos------|Azul Noche sobre Crema
+|Texto secundario----------------|Gris Asfalto sobre Crema
+|Encabezado----------------------|Fondo Azul Noche con texto blanco
+|Enlaces-------------------------|Verde Ruta sobre Crema, siempre subrayados
+|Botones principales-------------|Fondo Verde Ruta con texto blanco
+|Botones secundarios y destacados|Fondo Naranja Pedal con texto Azul Noche
+|Naranja Pedal-------------------|Nunca como color de texto ni con texto blanco. Solo como fondo o como adorno.
+
