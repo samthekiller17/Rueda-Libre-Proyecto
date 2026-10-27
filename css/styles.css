@@ -90,12 +90,37 @@ header,
 footer {
     background-color: var(--color-azul-noche);
     color: var(--color-blanco);
-    padding: var(--espacio-s) max(var(--espacio-l), calc((100% - 50rem) / 2 + var(--espacio-l)));
+    padding: var(--espacio-s) var(--espacio-l);
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 
 header {
+    display: flex;
+    flex-wrap: wrap;               
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--espacio-s);
     border-bottom: 0.25rem solid var(--color-naranja-pedal);
+}
+
+.marca {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.marca h1{
+    margin: 0;
+}
+
+.marca img{
+    width: 8rem;
 }
 
 header img {
@@ -106,8 +131,10 @@ header h1 {
     margin: var(--espacio-s) 0 var(--espacio-xs);
 }
 
-header p {
-    margin: 0 0 var(--espacio-s);
+header p ,
+.menu-interno {
+    flex-basis: 100%;
+    margin: 0;
 }
 
 
@@ -149,10 +176,13 @@ footer a:focus {
 
 
 #menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espacio-xs);
     list-style: none;
-    margin: var(--espacio-s) 0;
+    margin: 0;
     padding: var(--espacio-xs);
-    background-color: var(--color-crema);
+    background-color: var(--color-crema);   
 }
 
 
@@ -163,7 +193,7 @@ footer a:focus {
 
 
 #menu a {
-    display: inline-block;
+    display: block;
     padding: var(--espacio-xs) var(--espacio-s);
     color: var(--color-gris-asfalto);
     text-decoration: none;

@@ -2,11 +2,11 @@ BITACORA
 
 URL: http://127.0.0.1:5500/index.html
 Protocolo: http
-Host: 127.0.0.1:5500
-Puerto: 80
-Ruta: index.html
+Host: 127.0.0.1
+Puerto: 5500
+Ruta: /index.html
 Metodo de la peticion: GET
-Codigo de estado: 304
+Codigo de estado: 200 
 Ruta no existente: - error: Cannot GET /index.html/promociones.html
 - significado: significa que el servidor web al que estás intentando acceder no encuentra la página en la ruta exacta que especificaste
 
@@ -146,3 +146,9 @@ LO QUE MEJORARÍA
 - Conectar el formulario a un servidor para que las reservas lleguen de verdad.
 - Hacer que el sitio se vea bien en celulares.
 - Poner descripciones exactas en las fotos.
+ 
+Un encabeza que se acomoda: Flexbox
+
+- Lo que pasa al estrechar la pagina es que cada objeto y
+  texto se va adaptando al disposito o estreches de la pestaña.
+
