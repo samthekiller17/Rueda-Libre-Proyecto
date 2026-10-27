@@ -156,4 +156,17 @@ La flota en cuadricula: Grid
 
 - En 1280 px se ven 3 columnas
 - En 900 px se ven 3 columnas
-- En 500 px se ven 1 columnas
+- En 500 px se ven 1 columna
+
+Layout en dos dimensiones
+
+  Criterio que use: Flebox cuando los elementos van en una sola linea y se
+  acomodan segun su contenido. Grid cuando necesito columnas con proporciones definidas
+  y quiero que el contenido se coloque en columnas.
+
+- Portada: Grid.
+- Galeria de rutas: Grid.
+- Reservas: Grid.
+- Fila del formulario (Documento y celular): Grid.
+- Encabezado: Flebox.
+- Footer: Flebox

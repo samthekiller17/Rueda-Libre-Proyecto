@@ -88,70 +88,100 @@ footer :focus {
 
 header,
 footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     background-color: var(--color-azul-noche);
     color: var(--color-blanco);
     padding: var(--espacio-s) var(--espacio-l);
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-direction: row;
-    align-items: center;
-    flex-wrap: wrap;
 }
 
-
+/* Encabezado: marca a un extremo y menú al otro. Naranja Pedal solo como adorno. */
 header {
-    display: flex;
-    flex-wrap: wrap;               
-    align-items: center;
     justify-content: space-between;
     gap: var(--espacio-s);
     border-bottom: 0.25rem solid var(--color-naranja-pedal);
 }
 
+/* Pie: contenido centrado, con espacio extra para que el botón fijo de WhatsApp no tape el texto */
+footer {
+    justify-content: center;
+    gap: 2rem;
+    padding-bottom: 5rem;
+}
+
+/* Logo y nombre juntos */
 .marca {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    gap: var(--espacio-m);
 }
 
-.marca h1{
-    margin: 0;
-}
-
-.marca img{
+.marca img {
     width: 8rem;
 }
 
-header img {
-    width: 12rem;
+.marca h1 {
+    margin: 0;
 }
 
-header h1 {
-    margin: var(--espacio-s) 0 var(--espacio-xs);
-}
-
-header p ,
+/* El párrafo y el menú interno ocupan su propia fila completa */
+header p,
 .menu-interno {
     flex-basis: 100%;
     margin: 0;
 }
 
-
-footer {
-    padding-bottom: 5rem;
-}
-
-
+/* Contenido principal: ancho máximo en rem y centrado */
 main {
     max-width: 50rem;
     margin: 0 auto;
     padding: var(--espacio-m) var(--espacio-l);
 }
 
-
+/* Portada de inicio: altura mínima relativa a la ventana */
 .portada {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--espacio-l);
+    align-items: center;
     min-height: 50vh;
+}
+
+.portada img {
+    width: 100%;
+}
+
+/* Galería de rutas: tres tarjetas iguales en una fila (Grid) */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--espacio-m);
+}
+
+/* La separación ya la da el gap */
+.galeria .tarjeta {
+    margin-bottom: 0;
+}
+
+.galeria img {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+/* Reservas: formulario y contacto en proporción 2:1 (Grid) */
+.reservas {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--espacio-l);
+    align-items: start;
+    /* el aside no se estira a la altura del formulario */
+}
+
+.reservas aside {
+    overflow-wrap: anywhere;
+    /* el correo largo no se sale de su columna */
 }
 
 
@@ -159,13 +189,13 @@ main {
    4. NAVEGACIÓN
    ========================================================== */
 
-
+/* Enlaces de encabezado y pie: Blanco sobre Azul Noche (15.97:1) */
 header a,
 footer a {
     color: var(--color-blanco);
 }
 
-
+/* Hover y foco: Azul Noche sobre Naranja Pedal (7.20:1) */
 header a:hover,
 header a:focus,
 footer a:hover,
@@ -174,7 +204,7 @@ footer a:focus {
     color: var(--color-azul-noche);
 }
 
-
+/* Menú principal: contenedor flexible con separación uniforme entre enlaces */
 #menu {
     display: flex;
     flex-wrap: wrap;
@@ -182,16 +212,10 @@ footer a:focus {
     list-style: none;
     margin: 0;
     padding: var(--espacio-xs);
-    background-color: var(--color-crema);   
+    background-color: var(--color-crema);
 }
 
-
-#menu li {
-    display: inline-block;
-    margin-right: var(--espacio-xs);
-}
-
-
+/* Enlace del menú: Gris Asfalto sobre Crema (5.57:1). Especificidad (1,0,1) */
 #menu a {
     display: block;
     padding: var(--espacio-xs) var(--espacio-s);
@@ -200,30 +224,31 @@ footer a:focus {
     border-bottom: 0.1875rem solid transparent;
 }
 
-
+/* Página actual: Verde Ruta sobre Crema (4.93:1). Especificidad (1,1,1).
+   Va antes de :hover/:focus para que estos ganen por orden cuando empatan. */
 #menu a.activo {
     color: var(--color-verde-ruta);
     font-weight: 700;
     border-bottom-color: var(--color-verde-ruta);
 }
 
-
+/* Hover y foco del menú: Azul Noche sobre Naranja Pedal (7.20:1) */
 #menu a:hover,
 #menu a:focus {
     background-color: var(--color-naranja-pedal);
     color: var(--color-azul-noche);
 }
 
-
+/* El contorno del menú va sobre Crema, así que vuelve a Azul Noche */
 #menu a:focus {
     outline-color: var(--color-azul-noche);
 }
 
+/* Menú interno de la página: enlaces separados */
 .menu-interno a {
     display: inline-block;
     margin: 0 var(--espacio-m) var(--espacio-xs) 0;
 }
-
 
 /* ==========================================================
    5. COMPONENTES
@@ -268,7 +293,8 @@ footer a:focus {
 .flota {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
-    gap: var(--espacio-m);          /* misma separación entre filas y columnas */
+    gap: var(--espacio-m);
+    /* misma separación entre filas y columnas */
 }
 
 /* Tarjeta de la flota: reutiliza .tarjeta (relleno, borde y esquinas) y apila su contenido en columna */
@@ -276,7 +302,8 @@ footer a:focus {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    margin-bottom: 0;               /* la separación ya la da el gap de la cuadrícula */
+    margin-bottom: 0;
+    /* la separación ya la da el gap de la cuadrícula */
 }
 
 .tarjeta-flota h3 {
@@ -285,7 +312,7 @@ footer a:focus {
 
 /* Todas las fotos con la misma proporción, aunque sean de tamaños distintos */
 .tarjeta-flota img {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
 }
 
@@ -346,7 +373,7 @@ button:focus,
     z-index: 10;
     padding: var(--espacio-xs) var(--espacio-m);
     border: 2px solid var(--color-blanco);
-    
+
 }
 
 
@@ -425,6 +452,17 @@ legend {
 
 fieldset p {
     margin: 0 0 var(--espacio-s);
+}
+
+.fila-campos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--espacio-m);
+    margin-bottom: var(--espacio-s);
+}
+
+.fila-campos p {
+    margin-bottom: 0;
 }
 
 
