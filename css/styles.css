@@ -33,7 +33,7 @@
     box-sizing: border-box;
 }
 
-/* Todo lo demás hereda de aquí */
+
 body {
     margin: 0;
     font-family: var(--fuente-texto);
@@ -96,21 +96,21 @@ footer {
     padding: var(--espacio-s) var(--espacio-l);
 }
 
-/* Encabezado: marca a un extremo y menú al otro. Naranja Pedal solo como adorno. */
+
 header {
     justify-content: space-between;
     gap: var(--espacio-s);
     border-bottom: 0.25rem solid var(--color-naranja-pedal);
 }
 
-/* Pie: contenido centrado, con espacio extra para que el botón fijo de WhatsApp no tape el texto */
+
 footer {
     justify-content: center;
     gap: 2rem;
     padding-bottom: 5rem;
 }
 
-/* Logo y nombre juntos */
+
 .marca {
     display: flex;
     flex-wrap: wrap;
@@ -126,21 +126,21 @@ footer {
     margin: 0;
 }
 
-/* El párrafo y el menú interno ocupan su propia fila completa */
+
 header p,
 .menu-interno {
     flex-basis: 100%;
     margin: 0;
 }
 
-/* Contenido principal: ancho máximo en rem y centrado */
+
 main {
     max-width: 50rem;
     margin: 0 auto;
     padding: var(--espacio-m) var(--espacio-l);
 }
 
-/* Portada de inicio: altura mínima relativa a la ventana */
+
 .portada {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -153,14 +153,14 @@ main {
     width: 100%;
 }
 
-/* Galería de rutas: tres tarjetas iguales en una fila (Grid) */
+
 .galeria {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--espacio-m);
 }
 
-/* La separación ya la da el gap */
+
 .galeria .tarjeta {
     margin-bottom: 0;
 }
@@ -170,18 +170,16 @@ main {
     object-fit: cover;
 }
 
-/* Reservas: formulario y contacto en proporción 2:1 (Grid) */
+
 .reservas {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: var(--espacio-l);
     align-items: start;
-    /* el aside no se estira a la altura del formulario */
 }
 
 .reservas aside {
     overflow-wrap: anywhere;
-    /* el correo largo no se sale de su columna */
 }
 
 
@@ -189,13 +187,13 @@ main {
    4. NAVEGACIÓN
    ========================================================== */
 
-/* Enlaces de encabezado y pie: Blanco sobre Azul Noche (15.97:1) */
+
 header a,
 footer a {
     color: var(--color-blanco);
 }
 
-/* Hover y foco: Azul Noche sobre Naranja Pedal (7.20:1) */
+
 header a:hover,
 header a:focus,
 footer a:hover,
@@ -204,7 +202,7 @@ footer a:focus {
     color: var(--color-azul-noche);
 }
 
-/* Menú principal: contenedor flexible con separación uniforme entre enlaces */
+
 #menu {
     display: flex;
     flex-wrap: wrap;
@@ -215,7 +213,7 @@ footer a:focus {
     background-color: var(--color-crema);
 }
 
-/* Enlace del menú: Gris Asfalto sobre Crema (5.57:1). Especificidad (1,0,1) */
+
 #menu a {
     display: block;
     padding: var(--espacio-xs) var(--espacio-s);
@@ -224,27 +222,26 @@ footer a:focus {
     border-bottom: 0.1875rem solid transparent;
 }
 
-/* Página actual: Verde Ruta sobre Crema (4.93:1). Especificidad (1,1,1).
-   Va antes de :hover/:focus para que estos ganen por orden cuando empatan. */
+
 #menu a.activo {
     color: var(--color-verde-ruta);
     font-weight: 700;
     border-bottom-color: var(--color-verde-ruta);
 }
 
-/* Hover y foco del menú: Azul Noche sobre Naranja Pedal (7.20:1) */
+
 #menu a:hover,
 #menu a:focus {
     background-color: var(--color-naranja-pedal);
     color: var(--color-azul-noche);
 }
 
-/* El contorno del menú va sobre Crema, así que vuelve a Azul Noche */
+
 #menu a:focus {
     outline-color: var(--color-azul-noche);
 }
 
-/* Menú interno de la página: enlaces separados */
+
 .menu-interno a {
     display: inline-block;
     margin: 0 var(--espacio-m) var(--espacio-xs) 0;
@@ -294,29 +291,28 @@ footer a:focus {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
     gap: var(--espacio-m);
-    /* misma separación entre filas y columnas */
 }
 
-/* Tarjeta de la flota: reutiliza .tarjeta (relleno, borde y esquinas) y apila su contenido en columna */
+
 .tarjeta-flota {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     margin-bottom: 0;
-    /* la separación ya la da el gap de la cuadrícula */
+    
 }
 
 .tarjeta-flota h3 {
     margin: 0 0 var(--espacio-xs);
 }
 
-/* Todas las fotos con la misma proporción, aunque sean de tamaños distintos */
+
 .tarjeta-flota img {
     aspect-ratio: 16 / 9;
     object-fit: cover;
 }
 
-/* La descripción absorbe el espacio sobrante: empuja precio y enlace al final de la tarjeta */
+
 .tarjeta-flota .descripcion {
     flex-grow: 1;
     margin: 0 0 var(--espacio-s);
