@@ -152,3 +152,8 @@ Un encabeza que se acomoda: Flexbox
 - Lo que pasa al estrechar la pagina es que cada objeto y
   texto se va adaptando al disposito o estreches de la pestaña.
 
+La flota en cuadricula: Grid
+
+- En 1280 px se ven 3 columnas
+- En 900 px se ven 3 columnas
+- En 500 px se ven 1 columnas

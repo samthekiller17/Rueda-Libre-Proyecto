@@ -265,6 +265,45 @@ footer a:focus {
     border-radius: 0 0 0.25rem 0.25rem;
 }
 
+.flota {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    gap: var(--espacio-m);          /* misma separación entre filas y columnas */
+}
+
+/* Tarjeta de la flota: reutiliza .tarjeta (relleno, borde y esquinas) y apila su contenido en columna */
+.tarjeta-flota {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 0;               /* la separación ya la da el gap de la cuadrícula */
+}
+
+.tarjeta-flota h3 {
+    margin: 0 0 var(--espacio-xs);
+}
+
+/* Todas las fotos con la misma proporción, aunque sean de tamaños distintos */
+.tarjeta-flota img {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+/* La descripción absorbe el espacio sobrante: empuja precio y enlace al final de la tarjeta */
+.tarjeta-flota .descripcion {
+    flex-grow: 1;
+    margin: 0 0 var(--espacio-s);
+}
+
+.tarjeta-flota .precio {
+    margin: 0 0 var(--espacio-s);
+}
+
+.tarjeta-flota .boton-cta {
+    padding: var(--espacio-xs) var(--espacio-m);
+    text-align: center;
+}
+
 
 button,
 .boton-cta,
