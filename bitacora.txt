@@ -199,3 +199,27 @@ Problemas encontrados y como los resolvi:
 4. El fieldset del formulario puede ensanchar la pagina.
    Solucion: le puse min-width: 0.
 
+
+Flota en Bootstrap: Primera comparacion.
+
+
+Tiempo invertido: 2/3 horas (versión propia con CSS: 1 hora y media)
+
+Líneas de CSS de distribución de la flota
+- Versión propia (styles.css): 14 líneas (.flota, .tarjeta-flota y .descripcion)
+- Versión Bootstrap: 0 líneas de CSS propio, 4 clases de grilla por columna
+  (col-12 col-sm-6 col-lg-4 col-xl-3) + row g-4 + container
+
+Lo que Bootstrap me dio sin esfuerzo
+- Los 4 puntos de quiebre (1, 2, 3 y 4 columnas) ya vienen hechos.
+- Los gutters con g-4 y un contenedor centrado con container.
+- Tarjetas con h-100 para que todas midan lo mismo.
+
+Control que perdí
+- En mi versión, auto-fit y minmax se adaptaban a cualquier
+  ancho sin definir puntos de quiebre. Bootstrap solo cambia en 576, 992
+  y 1200 px; entre esos anchos las columnas no se ajustan.
+- Mi paleta de marca: el botón sale con el verde estándar de Bootstrap,
+  no con mi Verde Ruta, y la fuente es la del navegador.
+- El HTML queda con muchas clases y cargo todo Bootstrap para usar solo la grilla.  
+
