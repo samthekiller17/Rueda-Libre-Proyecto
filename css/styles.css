@@ -2,7 +2,6 @@
    1. VARIABLES
    ========================================================== */
 :root {
-    /* Paleta de marca */
     --color-verde-ruta: #1E7A4F;
     --color-naranja-pedal: #F39A2B;
     --color-azul-noche: #14213D;
@@ -10,10 +9,8 @@
     --color-gris-asfalto: #5B6470;
     --color-blanco: #FFFFFF;
 
-
     --fuente-titulos: "Montserrat", Arial, Helvetica, sans-serif;
     --fuente-texto: "Open Sans", Arial, Helvetica, sans-serif;
-
 
     --espacio-xs: 0.5rem;
     --espacio-s: 1rem;
@@ -25,14 +22,11 @@
 /* ==========================================================
    2. BASE
    ========================================================== */
-
-
 *,
 *::before,
 *::after {
     box-sizing: border-box;
 }
-
 
 body {
     margin: 0;
@@ -41,7 +35,6 @@ body {
     background-color: var(--color-crema);
     line-height: 1.6;
 }
-
 
 h1,
 h2,
@@ -52,11 +45,11 @@ h6 {
     font-family: var(--fuente-titulos);
 }
 
+
 img {
     max-width: 100%;
     height: auto;
 }
-
 
 a {
     color: var(--color-verde-ruta);
@@ -68,12 +61,10 @@ a:hover {
     text-decoration-thickness: 0.2em;
 }
 
-
 :focus {
     outline: 0.1875rem solid var(--color-azul-noche);
     outline-offset: 0.125rem;
 }
-
 
 header :focus,
 footer :focus {
@@ -82,32 +73,30 @@ footer :focus {
 
 
 /* ==========================================================
-   3. ESTRUCTURA
+   3. ESTRUCTURA (versión móvil: una columna)
    ========================================================== */
-
-
 header,
 footer {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     align-items: center;
+    gap: var(--espacio-s);
     background-color: var(--color-azul-noche);
     color: var(--color-blanco);
-    padding: var(--espacio-s) var(--espacio-l);
+    padding: var(--espacio-s);
+    text-align: center;
 }
 
-
 header {
-    justify-content: space-between;
-    gap: var(--espacio-s);
     border-bottom: 0.25rem solid var(--color-naranja-pedal);
 }
 
-
 footer {
-    justify-content: center;
-    gap: 2rem;
     padding-bottom: 5rem;
+}
+
+footer p {
+    margin: 0;
 }
 
 
@@ -115,51 +104,47 @@ footer {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: var(--espacio-m);
+    justify-content: center;
+    gap: var(--espacio-s);
 }
 
 .marca img {
-    width: 8rem;
+    width: 5rem;
 }
 
 .marca h1 {
     margin: 0;
+    font-size: 1.5rem;
 }
-
 
 header p,
 .menu-interno {
-    flex-basis: 100%;
     margin: 0;
 }
-
 
 main {
     max-width: 50rem;
     margin: 0 auto;
-    padding: var(--espacio-m) var(--espacio-l);
+    padding: var(--espacio-s);
 }
 
 
 .portada {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--espacio-l);
+    grid-template-columns: 1fr;
+    gap: var(--espacio-m);
     align-items: center;
-    min-height: 50vh;
 }
 
 .portada img {
     width: 100%;
 }
 
-
 .galeria {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     gap: var(--espacio-m);
 }
-
 
 .galeria .tarjeta {
     margin-bottom: 0;
@@ -170,10 +155,9 @@ main {
     object-fit: cover;
 }
 
-
 .reservas {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr;
     gap: var(--espacio-l);
     align-items: start;
 }
@@ -186,13 +170,10 @@ main {
 /* ==========================================================
    4. NAVEGACIÓN
    ========================================================== */
-
-
 header a,
 footer a {
     color: var(--color-blanco);
 }
-
 
 header a:hover,
 header a:focus,
@@ -202,17 +183,16 @@ footer a:focus {
     color: var(--color-azul-noche);
 }
 
-
 #menu {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: var(--espacio-xs);
     list-style: none;
     margin: 0;
     padding: var(--espacio-xs);
     background-color: var(--color-crema);
 }
-
 
 #menu a {
     display: block;
@@ -222,13 +202,11 @@ footer a:focus {
     border-bottom: 0.1875rem solid transparent;
 }
 
-
 #menu a.activo {
     color: var(--color-verde-ruta);
     font-weight: 700;
     border-bottom-color: var(--color-verde-ruta);
 }
-
 
 #menu a:hover,
 #menu a:focus {
@@ -236,22 +214,19 @@ footer a:focus {
     color: var(--color-azul-noche);
 }
 
-
 #menu a:focus {
     outline-color: var(--color-azul-noche);
 }
 
-
 .menu-interno a {
     display: inline-block;
-    margin: 0 var(--espacio-m) var(--espacio-xs) 0;
+    margin: 0 var(--espacio-xs) var(--espacio-xs);
 }
+
 
 /* ==========================================================
    5. COMPONENTES
    ========================================================== */
-
-
 .tarjeta {
     position: relative;
     width: 100%;
@@ -265,7 +240,6 @@ footer a:focus {
     margin-top: 0;
 }
 
-
 .tarjeta img {
     display: block;
     width: 100%;
@@ -273,7 +247,6 @@ footer a:focus {
     margin-bottom: var(--espacio-s);
     border-radius: 0.25rem;
 }
-
 
 .etiqueta-nuevo {
     position: absolute;
@@ -293,25 +266,21 @@ footer a:focus {
     gap: var(--espacio-m);
 }
 
-
 .tarjeta-flota {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     margin-bottom: 0;
-    
 }
 
 .tarjeta-flota h3 {
     margin: 0 0 var(--espacio-xs);
 }
 
-
 .tarjeta-flota img {
     aspect-ratio: 16 / 9;
     object-fit: cover;
 }
-
 
 .tarjeta-flota .descripcion {
     flex-grow: 1;
@@ -326,7 +295,6 @@ footer a:focus {
     padding: var(--espacio-xs) var(--espacio-m);
     text-align: center;
 }
-
 
 button,
 .boton-cta,
@@ -345,14 +313,12 @@ button {
     cursor: pointer;
 }
 
-
 button:hover,
 .boton-cta:hover,
 .boton-whatsapp:hover {
     background-color: var(--color-naranja-pedal);
     color: var(--color-azul-noche);
 }
-
 
 button:focus,
 .boton-cta:focus,
@@ -361,7 +327,6 @@ button:focus,
     color: var(--color-blanco);
 }
 
-
 .boton-whatsapp {
     position: fixed;
     right: var(--espacio-s);
@@ -369,9 +334,7 @@ button:focus,
     z-index: 10;
     padding: var(--espacio-xs) var(--espacio-m);
     border: 2px solid var(--color-blanco);
-
 }
-
 
 .boton-whatsapp:focus {
     box-shadow: 0 0 0 0.5rem var(--color-blanco);
@@ -382,6 +345,8 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin: var(--espacio-s) 0 var(--espacio-m);
+    font-size: 0.75rem;
+    line-height: 1.4;
 }
 
 caption {
@@ -393,10 +358,9 @@ caption {
 th,
 td {
     border: 1px solid var(--color-azul-noche);
-    padding: var(--espacio-s);
+    padding: 0.375rem 0.1875rem;
     text-align: left;
 }
-
 
 thead th {
     background-color: var(--color-azul-noche);
@@ -411,7 +375,6 @@ thead th {
     padding: var(--espacio-xs) var(--espacio-m);
 }
 
-
 .enlace-saltar:focus {
     top: var(--espacio-xs);
     background-color: var(--color-naranja-pedal);
@@ -421,10 +384,8 @@ thead th {
 
 
 /* ==========================================================
-   6. FORMULARIO
+   6. FORMULARIO (móvil: todo en una columna)
    ========================================================== */
-
-
 input,
 select,
 textarea,
@@ -433,10 +394,10 @@ button {
     font-size: 1rem;
 }
 
-
 fieldset {
+    min-width: 0; /* evita que el fieldset ensanche la página */
     margin: 0 0 var(--espacio-l);
-    padding: var(--espacio-m);
+    padding: var(--espacio-s);
     border: 1px solid var(--color-azul-noche);
     border-radius: 0.5rem;
 }
@@ -452,22 +413,20 @@ fieldset p {
 
 .fila-campos {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--espacio-m);
+    grid-template-columns: 1fr;
+    gap: 0;
     margin-bottom: var(--espacio-s);
 }
 
 .fila-campos p {
-    margin-bottom: 0;
+    margin-bottom: var(--espacio-s);
 }
-
 
 label {
     display: block;
     margin-bottom: var(--espacio-xs);
     font-weight: 700;
 }
-
 
 input,
 select,
@@ -484,7 +443,6 @@ textarea {
     resize: vertical;
 }
 
-
 .opcion input {
     display: inline-block;
     width: auto;
@@ -497,13 +455,11 @@ textarea {
     font-weight: 400;
 }
 
-
 input:hover,
 select:hover,
 textarea:hover {
     border-color: var(--color-verde-ruta);
 }
-
 
 input:focus,
 select:focus,
@@ -511,4 +467,117 @@ textarea:focus {
     outline: 0.1875rem solid var(--color-verde-ruta);
     outline-offset: 0.125rem;
     border-color: var(--color-verde-ruta);
+}
+
+
+/* ==========================================================
+   7. TABLET (desde 768 px)
+   ========================================================== */
+@media (min-width: 768px) {
+
+
+    header {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: var(--espacio-s) var(--espacio-l);
+        text-align: left;
+    }
+
+    .marca {
+        justify-content: flex-start;
+        gap: var(--espacio-m);
+    }
+
+    .marca img {
+        width: 8rem;
+    }
+
+    .marca h1 {
+        font-size: 2em;
+    }
+
+    header p,
+    .menu-interno {
+        flex-basis: 100%;
+    }
+
+    .menu-interno a {
+        margin: 0 var(--espacio-m) var(--espacio-xs) 0;
+    }
+
+    /* Pie */
+    footer {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+        padding: var(--espacio-s) var(--espacio-l) 5rem;
+    }
+
+    main {
+        padding: var(--espacio-m) var(--espacio-l);
+    }
+
+
+    .portada {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--espacio-l);
+        min-height: 50vh;
+    }
+
+
+    .galeria {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+
+    .reservas {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    fieldset {
+        padding: var(--espacio-m);
+    }
+
+    .fila-campos {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--espacio-m);
+    }
+
+    .fila-campos p {
+        margin-bottom: 0;
+    }
+
+
+    table {
+        font-size: 1rem;
+        line-height: inherit;
+    }
+
+    th,
+    td {
+        padding: var(--espacio-s);
+    }
+}
+
+
+/* ==========================================================
+   8. ESCRITORIO (desde 1200 px)
+   ========================================================== */
+@media (min-width: 1200px) {
+
+
+    main {
+        max-width: 70rem;
+    }
+
+    .galeria,
+    .flota {
+        gap: var(--espacio-l);
+    }
+
+    .reservas {
+        gap: 4rem;
+    }
 }

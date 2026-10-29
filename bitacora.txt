@@ -134,10 +134,10 @@ DÍA 3: DISEÑO
 - MiniReto 9: Creé styles.css con variables de colores, fuentes y espacios.
   Aprendí que color se hereda del body y background-color no.
 - MiniReto 10: Arreglé el menú, La clase .activo no funcionaba porque #menu a (1,0,1)=
- (tiene 1 id (#menu), 0 clases y 1 etiqueta (a))
- pesa más que .activo (0,1,0) (es (0, 1, 0): tiene 0 ids, 1 clase y 0 etiquetas.).
- Lo resolví con #menu a.activo (1,1,1) (es (1, 1, 1): tiene 1 id, 1 clase (.activo) y 1 etiqueta (a).),
- sin !important.
+  (tiene 1 id (#menu), 0 clases y 1 etiqueta (a))
+  pesa más que .activo (0,1,0) (es (0, 1, 0): tiene 0 ids, 1 clase y 0 etiquetas.).
+  Lo resolví con #menu a.activo (1,1,1) (es (1, 1, 1): tiene 1 id, 1 clase (.activo) y 1 etiqueta (a).),
+  sin !important.
 - MiniReto 11: Apliqué box-sizing: border-box, tarjetas y formularios ordenados.
   Una tarjeta medía 850 px con content-box y 720 px con border-box.
 - MiniReto 12: Puse la etiqueta "Nuevo", el botón fijo de WhatsApp y ordené el CSS por secciones (v1.0).
@@ -164,9 +164,38 @@ Layout en dos dimensiones
   acomodan segun su contenido. Grid cuando necesito columnas con proporciones definidas
   y quiero que el contenido se coloque en columnas.
 
-- Portada: Grid.
-- Galeria de rutas: Grid.
-- Reservas: Grid.
-- Fila del formulario (Documento y celular): Grid.
-- Encabezado: Flebox.
-- Footer: Flebox
+- Portada: Grid. Necesito dos columnas iguales, una para el texto y otra para la
+  foto, y con align-items: center el texto queda centrado en vertical.
+
+- Galeria de rutas: Grid. Son tres columnas iguales y, si agrego más rutas,
+  se forma otra fila sola.
+- Reservas: Grid. La proporción 2:1 entre formulario y contacto.
+- Fila del formulario (Documento y celular): Grid. Quise dos columnas del mismo ancho sin importar lo que escriba el usuario.
+- Encabezado: Flebox. Es una sola fila: el nombre a un lado y el menú al otro
+  (justify-content: space-between), y bajan de línea si no caben.
+- Footer: Flebox. Es una sola fila de textos centrados que se acomodan
+  según su contenido (flex-wrap).
+
+
+Rueda libre v1.5: mobile-first
+
+Reorganice styles.css: lo que esta fuera de los @media es la version de celular.
+Con @media agregue solo lo que cambia en tablet y escritorio. Probe en DevTools
+a 360, 768 y 1280 px.
+
+Problemas encontrados y como los resolvi:
+1. Las tablas de tarifas se salia de la pantalla a 360 px.
+   Solucion: En movil baje la letra a 0.75rem y el relleno de las celdas.
+   Con "overflow-wrap: anywhere" se partian los precios, asi que lo quite
+   y no se parte ninguna palabra.
+
+2. El encabezado en fila no cabía en el celular: el menu quedaba apretado.
+   Solucion: En movil va en columna (Nombre arriba, menu centrado debajo)
+   y desde 768 px vuelve a fila con space-between.
+
+3. Portada, galeria, reservas en 2 y 3 columnas se veian diminutas en el celular.
+   Solucion: en movil quedan en 1 columna y las columnas se activan desde 768 px.
+
+4. El fieldset del formulario puede ensanchar la pagina.
+   Solucion: le puse min-width: 0.
+
