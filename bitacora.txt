@@ -221,5 +221,17 @@ Control que perdí
   y 1200 px; entre esos anchos las columnas no se ajustan.
 - Mi paleta de marca: el botón sale con el verde estándar de Bootstrap,
   no con mi Verde Ruta, y la fuente es la del navegador.
-- El HTML queda con muchas clases y cargo todo Bootstrap para usar solo la grilla.  
+- El HTML queda con muchas clases y cargo todo Bootstrap para usar solo la grilla.
+
+
+Sin Una linea de CSS: utilidades
+
+Clases que encontré en la documentación de Bootstrap 5.3
+
+1. flex-md-row: en celulares los elementos van en columna y desde 768 px pasan a fila.
+2. justify-content-md-between: separa los elementos hacia los extremos desde md.
+3. d-none d-md-block: oculta el elemento en celulares y lo muestra desde md.
+4. text-bg-dark: pone fondo oscuro y texto blanco a la vez, con buen contraste.
+5. text-center text-md-start: centra el texto en celulares y lo alinea a la izquierda desde md.
+
 
