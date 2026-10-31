@@ -20,6 +20,25 @@
 
 
 /* ==========================================================
+   1B. COLORES DE MARCA SOBRE BOOTSTRAP
+   Este archivo se carga DESPUÉS de bootstrap.min.css. Como :root
+   tiene la misma especificidad, ganan estos valores por orden de carga.
+   Así text-success, text-secondary, bg-warning, text-dark, enlaces y
+   bordes de Bootstrap usan mi paleta (valores en formato R, G, B).
+   ========================================================== */
+:root {
+    --bs-success-rgb: 30, 122, 79;     /* Verde Ruta */
+    --bs-secondary-rgb: 91, 100, 112;  /* Gris Asfalto */
+    --bs-warning-rgb: 243, 154, 43;    /* Naranja Pedal (solo fondo, con texto azul) */
+    --bs-dark-rgb: 20, 33, 61;         /* Azul Noche */
+    --bs-link-color-rgb: 30, 122, 79;
+    --bs-link-hover-color-rgb: 20, 33, 61;
+    --bs-border-color: var(--color-azul-noche);
+    --bs-border-color-translucent: var(--color-azul-noche);
+}
+
+
+/* ==========================================================
    2. BASE
    ========================================================== */
 *,
@@ -122,6 +141,7 @@ header p,
     margin: 0;
 }
 
+/* SE USA AÚN EN tarifas.html y reservas.html (index usa .container de Bootstrap) */
 main {
     max-width: 50rem;
     margin: 0 auto;
@@ -129,32 +149,7 @@ main {
 }
 
 
-.portada {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--espacio-m);
-    align-items: center;
-}
-
-.portada img {
-    width: 100%;
-}
-
-.galeria {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--espacio-m);
-}
-
-.galeria .tarjeta {
-    margin-bottom: 0;
-}
-
-.galeria img {
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-}
-
+/* SE USA AÚN EN reservas.html */
 .reservas {
     display: grid;
     grid-template-columns: 1fr;
@@ -260,41 +255,6 @@ footer a:focus {
     border-radius: 0 0 0.25rem 0.25rem;
 }
 
-.flota {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
-    gap: var(--espacio-m);
-}
-
-.tarjeta-flota {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin-bottom: 0;
-}
-
-.tarjeta-flota h3 {
-    margin: 0 0 var(--espacio-xs);
-}
-
-.tarjeta-flota img {
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-}
-
-.tarjeta-flota .descripcion {
-    flex-grow: 1;
-    margin: 0 0 var(--espacio-s);
-}
-
-.tarjeta-flota .precio {
-    margin: 0 0 var(--espacio-s);
-}
-
-.tarjeta-flota .boton-cta {
-    padding: var(--espacio-xs) var(--espacio-m);
-    text-align: center;
-}
 
 button,
 .boton-cta,
@@ -341,6 +301,7 @@ button:focus,
 }
 
 
+/* SE USA AÚN EN tarifas.html: table, caption, th, td, thead th */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -384,7 +345,7 @@ thead th {
 
 
 /* ==========================================================
-   6. FORMULARIO (móvil: todo en una columna)
+   6. FORMULARIO (SE USA AÚN EN reservas.html)
    ========================================================== */
 input,
 select,
@@ -472,6 +433,8 @@ textarea:focus {
 
 /* ==========================================================
    7. TABLET (desde 768 px)
+   Lo que queda aquí lo usan tarifas.html y reservas.html (header, footer,
+   main, .reservas, formulario, tablas). Inicio ya no depende de estos.
    ========================================================== */
 @media (min-width: 768px) {
 
@@ -520,18 +483,6 @@ textarea:focus {
     }
 
 
-    .portada {
-        grid-template-columns: 1fr 1fr;
-        gap: var(--espacio-l);
-        min-height: 50vh;
-    }
-
-
-    .galeria {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-
     .reservas {
         grid-template-columns: 2fr 1fr;
     }
@@ -572,10 +523,6 @@ textarea:focus {
         max-width: 70rem;
     }
 
-    .galeria,
-    .flota {
-        gap: var(--espacio-l);
-    }
 
     .reservas {
         gap: 4rem;
