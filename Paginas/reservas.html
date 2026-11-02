@@ -20,25 +20,39 @@
 <body>
     <a href="#contenido" class="boton-cta enlace-saltar">Saltar al contenido principal</a>
 
-    <header>
-        <div class="marca">
-            <img src="../img/Icono_Rueda_Libre.jpg" alt="Logo de Rueda Libre" width="300">
-            <h1>Reserva tu bicicleta</h1>
-        </div>
-
-        <nav aria-label="Principal">
-            <ul id="menu">
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="tarifas.html">Tarifas y rutas</a></li>
-                <li><a href="reservas.html" class="activo" aria-current="page">Reservas</a></li>
-            </ul>
+    <header class="border-bottom border-warning border-3 bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Navegación principal">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html">
+                    <img src="../img/Icono_Rueda_Libre.jpg" alt="Logo de Rueda Libre" width="120" height="120"
+                        class="rounded">
+                    <span class="fs-4 fw-bold">Rueda Libre</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+                    aria-controls="menuPrincipal" aria-expanded="false" aria-label="Alternar navegación">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="tarifas.html">Tarifas y rutas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="reservas.html">Reservas</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
 
 
     <main id="contenido" class="container py-4">
+        <h1>Reserva tu bicicleta</h1>
         <p class="mb-4">Para gestionar tu reserva o resolver cualquier duda, comunícate con nosotros.</p>
-        <!-- Formulario e información de contacto en columnas 8/4 desde md -->
         <div class="row g-4 align-items-start">
             <section class="col-12 col-md-8">
                 <h2>Formulario de reserva</h2>
@@ -157,7 +171,7 @@
                             <label for="acepta-politicas">Acepto las políticas de alquiler *</label>
                         </p>
                     </fieldset>
-                    <button type="submit" class="boton-cta">Enviar reserva</button>
+                    <button type="submit" class="btn btn-success btn-lg px-4">Enviar reserva</button>
                 </form>
             </section>
             <aside class="col-12 col-md-4 p-4 border rounded bg-white" aria-labelledby="titulo-contacto">

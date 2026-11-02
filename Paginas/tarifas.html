@@ -21,23 +21,33 @@
 <body>
     <a href="#contenido" class="boton-cta enlace-saltar">Saltar al contenido principal</a>
 
-    <header>
-        <div class="marca">
-            <img src="../img/Icono_Rueda_Libre.jpg" alt="Logo de Rueda Libre" width="300">
-            <h1>Lista de tarifas</h1>
-
-        </div>
-
-
-        <nav aria-label="Principal">
-            <ul id="menu">
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="tarifas.html" class="activo" aria-current="page">Tarifas y rutas</a></li>
-                <li><a href="reservas.html">Reservas</a></li>
-            </ul>
+    <header class="border-bottom border-warning border-3 bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Navegación principal">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html">
+                    <img src="../img/Icono_Rueda_Libre.jpg" alt="Logo de Rueda Libre" width="120" height="120"
+                        class="rounded">
+                    <span class="fs-4 fw-bold">Rueda Libre</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+                    aria-controls="menuPrincipal" aria-expanded="false" aria-label="Alternar navegación">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="tarifas.html">Tarifas y rutas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="reservas.html">Reservas</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
-        <p>En Rueda Libre, ofrecemos tarifas competitivas y flexibles para adaptarnos a tus necesidades. A
-            continuación, encontrarás nuestras tarifas de alquiler de bicicletas:</p>
     </header>
 
     <main id="contenido" class="container py-4">
@@ -45,8 +55,8 @@
             <div class="col-12 col-lg-8">
                 <section id="tarifas-bicicletas" class="mb-5">
                     <h2>Tarifas de alquiler de bicicletas</h2>
-                    <a href="reservas.html" class="boton-cta mb-3 d-inline-block">Reservar una bicicleta</a>
-                    
+                    <a href="reservas.html" class="btn btn-success btn-lg mb-3">Reservar una bicicleta</a>
+
                     <div class="table-responsive">
                         <table>
                             <caption>Precio en pesos colombianos según el tipo de bicicleta y la duración</caption>
@@ -120,14 +130,15 @@
                             </tbody>
                         </table>
                     </div>
-                    <a href="reservas.html" class="boton-cta mt-3 d-inline-block">Reservar un recorrido guiado</a>
+                    <a href="reservas.html" class="btn btn-outline-success mt-3">Reservar un recorrido guiado</a>
                 </section>
             </div>
             <!-- Columna lateral con información complementaria -->
             <div class="col-12 col-lg-4">
                 <aside aria-label="Información adicional del cliente" class="p-4 border rounded bg-white">
                     <h3 class="h4 mb-3">Información importante</h3>
-                    <p>Todas las tarifas incluyen casco y candado. Los recorridos salen sábados y domingos a las 7:00 a. m.</p>
+                    <p>Todas las tarifas incluyen casco y candado. Los recorridos salen sábados y domingos a las 7:00 a.
+                        m.</p>
                     <h4 class="h5 mt-3 mb-2">Recomendaciones:</h4>
                     <ul class="mb-0">
                         <li>Llevar identificación</li>
