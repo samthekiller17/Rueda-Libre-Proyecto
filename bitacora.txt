@@ -235,3 +235,24 @@ Clases que encontré en la documentación de Bootstrap 5.3
 5. text-center text-md-start: centra el texto en celulares y lo alinea a la izquierda desde md.
 
 
+Inicio migra a Bootstrap
+
+conflictos y soluciones:
+
+1. Mi página perdió su letra y sus colores.
+   Bootstrap trae su propia letra, su propio color de texto y su fondo blanco,
+   y tapaban los míos. Lo solucioné cargando mi archivo de estilos de último:
+   cuando dos reglas chocan, gana la que se lee después.
+
+2. Los colores de Bootstrap no eran los de Rueda Libre.
+   Los botones, textos y bordes salían con verdes y grises que no eran los
+   míos. Lo solucioné cambiando los colores de Bootstrap por los de mi marca
+   en un solo lugar, y así todo lo que lo usa queda con mis colores.
+
+3. El ancho del contenido se veía raro.
+   Yo ya tenía una regla para el ancho de la página y Bootstrap trae la suya.
+   Chocaban y mandaba la de Bootstrap. Lo solucioné dejando que Bootstrap
+   maneje el ancho en inicio, y mi regla vieja solo se queda para las otras
+   páginas que todavía la necesitan.
+
+

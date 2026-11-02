@@ -21,10 +21,6 @@
 
 /* ==========================================================
    1B. COLORES DE MARCA SOBRE BOOTSTRAP
-   Este archivo se carga DESPUÉS de bootstrap.min.css. Como :root
-   tiene la misma especificidad, ganan estos valores por orden de carga.
-   Así text-success, text-secondary, bg-warning, text-dark, enlaces y
-   bordes de Bootstrap usan mi paleta (valores en formato R, G, B).
    ========================================================== */
 :root {
     --bs-success-rgb: 30, 122, 79;     /* Verde Ruta */
@@ -141,7 +137,7 @@ header p,
     margin: 0;
 }
 
-/* SE USA AÚN EN tarifas.html y reservas.html (index usa .container de Bootstrap) */
+
 main {
     max-width: 50rem;
     margin: 0 auto;
@@ -301,7 +297,6 @@ button:focus,
 }
 
 
-/* SE USA AÚN EN tarifas.html: table, caption, th, td, thead th */
 table {
     width: 100%;
     border-collapse: collapse;
