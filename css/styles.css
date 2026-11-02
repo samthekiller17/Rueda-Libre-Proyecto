@@ -1,7 +1,8 @@
 /* ==========================================================
-   1. VARIABLES
+   1. VARIABLES DE MARCA Y SOBRESCRITURA DE BOOTSTRAP
    ========================================================== */
 :root {
+    /* Paleta de identidad Rueda Libre */
     --color-verde-ruta: #1E7A4F;
     --color-naranja-pedal: #F39A2B;
     --color-azul-noche: #14213D;
@@ -9,33 +10,46 @@
     --color-gris-asfalto: #5B6470;
     --color-blanco: #FFFFFF;
 
+    /* Fuentes y espaciados */
     --fuente-titulos: "Montserrat", Arial, Helvetica, sans-serif;
     --fuente-texto: "Open Sans", Arial, Helvetica, sans-serif;
-
     --espacio-xs: 0.5rem;
     --espacio-s: 1rem;
     --espacio-m: 1.5rem;
     --espacio-l: 2.5rem;
-}
 
+    /* Sobrescritura de variables globales de Bootstrap */
+    --bs-primary: #1E7A4F;
+    --bs-primary-rgb: 30, 122, 79;
+    --bs-dark: #14213D;
+    --bs-dark-rgb: 20, 33, 61;
+    --bs-warning: #F39A2B;
+    --bs-warning-rgb: 243, 154, 43;
+    --bs-secondary: #5B6470;
+    --bs-secondary-rgb: 91, 100, 112;
 
-/* ==========================================================
-   1B. COLORES DE MARCA SOBRE BOOTSTRAP
-   ========================================================== */
-:root {
-    --bs-success-rgb: 30, 122, 79;     /* Verde Ruta */
-    --bs-secondary-rgb: 91, 100, 112;  /* Gris Asfalto */
-    --bs-warning-rgb: 243, 154, 43;    /* Naranja Pedal (solo fondo, con texto azul) */
-    --bs-dark-rgb: 20, 33, 61;         /* Azul Noche */
+    /* Fondo, color de texto y tipografía del sitio */
+    --bs-body-bg: #FAF6EF;
+    --bs-body-bg-rgb: 250, 246, 239;
+    --bs-body-color: #14213D;
+    --bs-body-color-rgb: 20, 33, 61;
+    --bs-body-font-family: "Open Sans", Arial, Helvetica, sans-serif;
+
+    /* Enlaces estándar */
+    --bs-link-color: #1E7A4F;
     --bs-link-color-rgb: 30, 122, 79;
+    --bs-link-hover-color: #14213D;
     --bs-link-hover-color-rgb: 20, 33, 61;
-    --bs-border-color: var(--color-azul-noche);
-    --bs-border-color-translucent: var(--color-azul-noche);
+
+    /* Bordes redondeados */
+    --bs-border-radius: 0.375rem;
+    --bs-border-radius-sm: 0.25rem;
+    --bs-border-radius-lg: 0.5rem;
 }
 
 
 /* ==========================================================
-   2. BASE
+   2. ESTILOS BASE Y ACCESIBILIDAD
    ========================================================== */
 *,
 *::before,
@@ -58,121 +72,161 @@ h4,
 h5,
 h6 {
     font-family: var(--fuente-titulos);
+    color: var(--color-azul-noche);
 }
-
 
 img {
     max-width: 100%;
     height: auto;
 }
 
-a {
-    color: var(--color-verde-ruta);
-    text-decoration: underline;
-}
-
-a:hover {
-    color: var(--color-azul-noche);
-    text-decoration-thickness: 0.2em;
-}
-
-:focus {
+/* Indicador de foco accesible para teclado */
+:focus-visible {
     outline: 0.1875rem solid var(--color-azul-noche);
     outline-offset: 0.125rem;
 }
 
-header :focus,
-footer :focus {
+header :focus-visible,
+footer :focus-visible {
     outline-color: var(--color-blanco);
+}
+
+/* Enlace para saltar al contenido principal (Accesibilidad) */
+.enlace-saltar {
+    position: absolute;
+    top: -6rem;
+    left: var(--espacio-s);
+    z-index: 1050;
+    padding: var(--espacio-xs) var(--espacio-m);
+}
+
+.enlace-saltar:focus {
+    top: var(--espacio-xs);
 }
 
 
 /* ==========================================================
-   3. ESTRUCTURA (versión móvil: una columna)
+   3. BOTONES: VERDE RUTA Y VARIANTE PROPIA NARANJA PEDAL
    ========================================================== */
-/*header,
-footer {
+/* Botón principal (Verde Ruta) */
+.btn-primary,
+.btn-success {
+    --bs-btn-bg: var(--color-verde-ruta);
+    --bs-btn-border-color: var(--color-verde-ruta);
+    --bs-btn-color: #ffffff;
+    --bs-btn-hover-bg: #165b3b;
+    --bs-btn-hover-border-color: #165b3b;
+    --bs-btn-hover-color: #ffffff;
+    --bs-btn-active-bg: #10422b;
+    --bs-btn-active-border-color: #10422b;
+    --bs-btn-active-color: #ffffff;
+    --bs-btn-focus-shadow-rgb: 30, 122, 79;
+}
+
+/* Variante propia Naranja Pedal con texto Azul Noche (contraste 7.8:1) */
+.btn-pedal,
+.btn-warning {
+    --bs-btn-bg: var(--color-naranja-pedal);
+    --bs-btn-border-color: var(--color-naranja-pedal);
+    --bs-btn-color: var(--color-azul-noche);
+    --bs-btn-hover-bg: #e08819;
+    --bs-btn-hover-border-color: #d17c12;
+    --bs-btn-hover-color: var(--color-azul-noche);
+    --bs-btn-active-bg: #c4720e;
+    --bs-btn-active-border-color: #b5670a;
+    --bs-btn-active-color: var(--color-azul-noche);
+    --bs-btn-focus-shadow-rgb: 243, 154, 43;
+    font-weight: 700;
+}
+
+
+/* ==========================================================
+   4. CLASES PROPIAS COMPLEMENTARIAS
+   ========================================================== */
+/* Clase 1: Portada hero con realce suave */
+.portada-hero {
+    background: linear-gradient(180deg, rgba(20, 33, 61, 0.04) 0%, rgba(250, 246, 239, 0) 100%);
+    border-radius: var(--bs-border-radius-lg);
+    padding: 2rem 1.5rem;
+}
+
+/* Clase 2: Títulos de sección con distintivo Naranja Pedal */
+.titulo-marca {
+    display: inline-block;
+    border-bottom: 3px solid var(--color-naranja-pedal);
+    padding-bottom: 0.35rem;
+    margin-bottom: 1.25rem;
+}
+
+/* Clase 3: Pie de página corporativo */
+footer,
+.pie-marca {
+    background-color: var(--color-azul-noche);
+    color: var(--color-blanco);
+    border-top: 4px solid var(--color-naranja-pedal);
+    padding: 2.5rem 1rem 6rem; /* El espacio inferior evita que el botón de WhatsApp lo tape */
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--espacio-s);
-    background-color: var(--color-azul-noche);
-    color: var(--color-blanco);
-    padding: var(--espacio-s);
-    text-align: center;
+    justify-content: center;
+    gap: 0.75rem;
 }
-
-header {
-    border-bottom: 0.25rem solid var(--color-naranja-pedal);
-}*/
-
-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--espacio-s);
-    background-color: var(--color-azul-noche);
-    color: var(--color-blanco);
-    padding: var(--espacio-s);
-    text-align: center;
-    padding-bottom: 5rem;
-}
-footer p {
+footer p,
+.pie-marca p {
     margin: 0;
+    color: var(--color-blanco);
 }
-/* Enlace activo y hover en la Navbar */
+footer a,
+.pie-marca a {
+    color: var(--color-naranja-pedal);
+    text-decoration: underline;
+}
+footer a:hover,
+footer a:focus,
+.pie-marca a:hover,
+.pie-marca a:focus {
+    color: var(--color-blanco);
+}
+/* En pantallas grandes (Tablet y PC) se distribuye en una fila horizontal */
+@media (min-width: 768px) {
+    footer,
+    .pie-marca {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+}
+
+/* ==========================================================
+   5. NAVBAR Y NAVEGACIÓN RESPONSIVE
+   ========================================================== */
 .navbar-dark .navbar-nav .nav-link {
     font-weight: 600;
+    color: rgba(255, 255, 255, 0.85);
 }
+
 .navbar-dark .navbar-nav .nav-link:hover,
 .navbar-dark .navbar-nav .nav-link:focus {
     color: var(--color-naranja-pedal);
 }
+
+/* Enlace activo con acento de marca */
 .navbar-dark .navbar-nav .nav-link.active {
-    color: var(--color-blanco) !important;
+    color: var(--color-blanco);
     border-bottom: 2px solid var(--color-naranja-pedal);
 }
 
 
-
 /* ==========================================================
-   4. NAVEGACIÓN
+   6. COMPONENTES VISUALES Y BOTÓN WHATSAPP
    ========================================================== */
-header a,
-footer a {
-    color: var(--color-blanco);
-}
-
-header a:hover,
-header a:focus,
-footer a:hover,
-footer a:focus {
-    background-color: var(--color-naranja-pedal);
-    color: var(--color-azul-noche);
-}
-
-
-
-/* ==========================================================
-   5. COMPONENTES
-   ========================================================== */
-.etiqueta-nuevo {
-    position: absolute;
-    top: 0;
-    right: var(--espacio-m);
-    padding: 0 var(--espacio-xs);
-    background-color: var(--color-naranja-pedal);
-    color: var(--color-azul-noche);
-    font-size: 0.875rem;
-    line-height: 1.5rem;
-    border-radius: 0 0 0.25rem 0.25rem;
-}
-/* Botón flotante de WhatsApp */
+/* Botón flotante accesible de WhatsApp */
 .boton-whatsapp {
     position: fixed;
     right: var(--espacio-s);
     bottom: var(--espacio-s);
-    z-index: 10;
+    z-index: 1040;
     padding: var(--espacio-xs) var(--espacio-m);
     background-color: var(--color-verde-ruta);
     color: var(--color-blanco);
@@ -181,169 +235,80 @@ footer a:focus {
     border-radius: 0.25rem;
     border: 2px solid var(--color-blanco);
 }
+
 .boton-whatsapp:hover {
     background-color: var(--color-naranja-pedal);
     color: var(--color-azul-noche);
 }
+
 .boton-whatsapp:focus {
-    box-shadow: 0 0 0 0.5rem var(--color-blanco);
+    box-shadow: 0 0 0 0.35rem rgba(255, 255, 255, 0.7);
+    background-color: var(--color-azul-noche);
+    color: var(--color-blanco);
 }
-/* Tablas semánticas */
+
+/* Tablas semánticas (Semana 1) */
 table {
     width: 100%;
     border-collapse: collapse;
     margin: var(--espacio-s) 0 var(--espacio-m);
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     line-height: 1.4;
 }
+
 caption {
     color: var(--color-gris-asfalto);
     text-align: left;
     padding-bottom: var(--espacio-xs);
 }
+
 th,
 td {
     border: 1px solid var(--color-azul-noche);
-    padding: 0.375rem 0.1875rem;
+    padding: 0.5rem 0.35rem;
     text-align: left;
 }
+
 thead th {
     background-color: var(--color-azul-noche);
     color: var(--color-blanco);
 }
-.enlace-saltar {
-    position: absolute;
-    top: -6rem;
-    left: var(--espacio-s);
-    z-index: 20;
-    padding: var(--espacio-xs) var(--espacio-m);
-}
-.enlace-saltar:focus {
-    top: var(--espacio-xs);
-}
 
 
 /* ==========================================================
-   6. FORMULARIO (SE USA AÚN EN reservas.html)
+   7. FORMULARIOS (Contornos e interactividad)
    ========================================================== */
-input,
-select,
-textarea,
-button {
-    font-family: inherit;
-    font-size: 1rem;
-}
-
 fieldset {
-    min-width: 0; /* evita que el fieldset ensanche la página */
+    min-width: 0;
     margin: 0 0 var(--espacio-l);
     padding: var(--espacio-s);
     border: 1px solid var(--color-azul-noche);
-    border-radius: 0.5rem;
+    border-radius: var(--bs-border-radius-lg);
 }
 
 legend {
+    width: auto;
+    float: none;
     padding: 0 var(--espacio-xs);
     font-weight: 700;
-}
-
-fieldset p {
-    margin: 0 0 var(--espacio-s);
-}
-
-
-label {
-    display: block;
-    margin-bottom: var(--espacio-xs);
-    font-weight: 700;
-}
-
-input,
-select,
-textarea {
-    display: block;
-    width: 100%;
-    padding: var(--espacio-xs);
-    color: var(--color-azul-noche);
-    background-color: var(--color-blanco);
-    border: 1px solid var(--color-gris-asfalto);
-}
-
-textarea {
-    resize: vertical;
-}
-
-.opcion input {
-    display: inline-block;
-    width: auto;
-    margin-right: var(--espacio-xs);
-}
-
-.opcion label {
-    display: inline-block;
-    margin-bottom: 0;
-    font-weight: 400;
-}
-
-input:hover,
-select:hover,
-textarea:hover {
-    border-color: var(--color-verde-ruta);
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-    outline: 0.1875rem solid var(--color-verde-ruta);
-    outline-offset: 0.125rem;
-    border-color: var(--color-verde-ruta);
+    font-size: 1.15rem;
+    font-family: var(--fuente-titulos);
 }
 
 
 /* ==========================================================
-   7. TABLET (desde 768 px)
-   Lo que queda aquí lo usan tarifas.html y reservas.html (header, footer,
-   main, .reservas, formulario, tablas). Inicio ya no depende de estos.
+   8. ADAPTACIONES RESPONSIVAS (desde 768 px)
    ========================================================== */
 @media (min-width: 768px) {
-    header {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        padding: var(--espacio-s) var(--espacio-l);
-        text-align: left;
-    }
-    .marca {
-        justify-content: flex-start;
-        gap: var(--espacio-m);
-    }
-    .marca img {
-        width: 8rem;
-    }
-    .marca h1 {
-        font-size: 2em;
-    }
-    header p,
-    .menu-interno {
-        flex-basis: 100%;
-    }
-    .menu-interno a {
-        margin: 0 var(--espacio-m) var(--espacio-xs) 0;
-    }
-    footer {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 2rem;
-        padding: var(--espacio-s) var(--espacio-l) 5rem;
-    }
     fieldset {
         padding: var(--espacio-m);
     }
+
     table {
         font-size: 1rem;
         line-height: inherit;
     }
+
     th,
     td {
         padding: var(--espacio-s);

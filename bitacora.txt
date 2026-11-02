@@ -177,7 +177,7 @@ Layout en dos dimensiones
   según su contenido (flex-wrap).
 
 
-Rueda libre v1.5: mobile-first
+*Rueda libre v1.5: mobile-first*
 
 Reorganice styles.css: lo que esta fuera de los @media es la version de celular.
 Con @media agregue solo lo que cambia en tablet y escritorio. Probe en DevTools
@@ -200,7 +200,7 @@ Problemas encontrados y como los resolvi:
    Solucion: le puse min-width: 0.
 
 
-Flota en Bootstrap: Primera comparacion.
+*Flota en Bootstrap: Primera comparacion.*
 
 
 Tiempo invertido: 2/3 horas (versión propia con CSS: 1 hora y media)
@@ -224,7 +224,7 @@ Control que perdí
 - El HTML queda con muchas clases y cargo todo Bootstrap para usar solo la grilla.
 
 
-Sin Una linea de CSS: utilidades
+*Sin Una linea de CSS: utilidades*
 
 Clases que encontré en la documentación de Bootstrap 5.3
 
@@ -235,7 +235,7 @@ Clases que encontré en la documentación de Bootstrap 5.3
 5. text-center text-md-start: centra el texto en celulares y lo alinea a la izquierda desde md.
 
 
-Inicio migra a Bootstrap
+*Inicio migra a Bootstrap*
 
 conflictos y soluciones:
 
@@ -256,7 +256,7 @@ conflictos y soluciones:
    páginas que todavía la necesitan.
 
 
-Rueda Libre v2.0-beta
+*Rueda Libre v2.0-beta*
 
 Que hice:
 Pasamos las páginas de Tarifas y Reservas a Bootstrap. Con esto, todo el sitio quedó parejo
@@ -279,3 +279,21 @@ Realmente nos ahorró trabajo?
 Totalmente. Ahorramos más de la mitad del tiempo. La clave fue usar Bootstrap como
 el "esqueleto" para ordenar la página y nuestro propio código para darle la vida, los colores y la identidad a rueda libre.
 
+
+*Rueda libre v2.0: con identidad propia*
+
+Resumen de la semana:
+Comenzamos el proyecto maquetando a mano cada elemento con HTML semántico y CSS propio.
+Aunque funcionaba, el código era difícil de mantener y adaptar a cada pantalla.
+
+En esta fase dimos el salto definitivo:
+1. Integramos Bootstrap para la estructura responsive (menú colapsable para celular,
+   carrusel de promociones, tarjetas niveladas en la flota y formulario con validación visual y modal).
+2. Recuperamos al 100% la identidad corporativa mediante variables CSS (--bs-*),
+   asegurando que el Verde Ruta, el Naranja Pedal y el Azul Noche gobernaran todos los botones, bordes y enlaces sin usar !important.
+3. Sumamos Bootstrap Icons para mejorar la accesibilidad y lectura visual en beneficios, navegación y contacto.
+4. Cumplimos los estándares de contraste tanto en texto común como en los botones y alertas.
+
+Capturas de evidencia guardadas en img/capturas/:
+- antes.png: El sitio con el diseño básico previo a la personalización de marca.
+- despues.png: El resultado final con la paleta de Rueda Libre, íconos y componentes unificados.
