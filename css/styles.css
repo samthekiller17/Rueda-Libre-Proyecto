@@ -138,26 +138,6 @@ header p,
 }
 
 
-main {
-    max-width: 50rem;
-    margin: 0 auto;
-    padding: var(--espacio-s);
-}
-
-
-/* SE USA AÚN EN reservas.html */
-.reservas {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--espacio-l);
-    align-items: start;
-}
-
-.reservas aside {
-    overflow-wrap: anywhere;
-}
-
-
 /* ==========================================================
    4. NAVEGACIÓN
    ========================================================== */
@@ -367,16 +347,6 @@ fieldset p {
     margin: 0 0 var(--espacio-s);
 }
 
-.fila-campos {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0;
-    margin-bottom: var(--espacio-s);
-}
-
-.fila-campos p {
-    margin-bottom: var(--espacio-s);
-}
 
 label {
     display: block;
@@ -432,8 +402,6 @@ textarea:focus {
    main, .reservas, formulario, tablas). Inicio ya no depende de estos.
    ========================================================== */
 @media (min-width: 768px) {
-
-
     header {
         flex-direction: row;
         flex-wrap: wrap;
@@ -441,30 +409,23 @@ textarea:focus {
         padding: var(--espacio-s) var(--espacio-l);
         text-align: left;
     }
-
     .marca {
         justify-content: flex-start;
         gap: var(--espacio-m);
     }
-
     .marca img {
         width: 8rem;
     }
-
     .marca h1 {
         font-size: 2em;
     }
-
     header p,
     .menu-interno {
         flex-basis: 100%;
     }
-
     .menu-interno a {
         margin: 0 var(--espacio-m) var(--espacio-xs) 0;
     }
-
-    /* Pie */
     footer {
         flex-direction: row;
         flex-wrap: wrap;
@@ -472,54 +433,15 @@ textarea:focus {
         gap: 2rem;
         padding: var(--espacio-s) var(--espacio-l) 5rem;
     }
-
-    main {
-        padding: var(--espacio-m) var(--espacio-l);
-    }
-
-
-    .reservas {
-        grid-template-columns: 2fr 1fr;
-    }
-
     fieldset {
         padding: var(--espacio-m);
     }
-
-    .fila-campos {
-        grid-template-columns: 1fr 1fr;
-        gap: var(--espacio-m);
-    }
-
-    .fila-campos p {
-        margin-bottom: 0;
-    }
-
-
     table {
         font-size: 1rem;
         line-height: inherit;
     }
-
     th,
     td {
         padding: var(--espacio-s);
-    }
-}
-
-
-/* ==========================================================
-   8. ESCRITORIO (desde 1200 px)
-   ========================================================== */
-@media (min-width: 1200px) {
-
-
-    main {
-        max-width: 70rem;
-    }
-
-
-    .reservas {
-        gap: 4rem;
     }
 }

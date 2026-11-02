@@ -256,3 +256,26 @@ conflictos y soluciones:
    páginas que todavía la necesitan.
 
 
+Rueda Libre v2.0-beta
+
+Que hice:
+Pasamos las páginas de Tarifas y Reservas a Bootstrap. Con esto, todo el sitio quedó parejo
+y se acomoda solo y sin problemas tanto en celulares como en computadores.
+
+1. Números y tiempo:
+- Versión anterior (hecha a mano): Teníamos 475 líneas de diseño propio y nos tomó
+  unas 7 horas, porque tocó medir y cuadrar a pulso cada columna y tamaño de pantalla.
+- Versión actual (con Bootstrap): Nos tomó solo 2 horas y media. Borramos 79 líneas de
+  código que ya sobraban, dejando nuestro archivo en 446 líneas enfocadas solo en los colores y la marca.
+
+2. Lo bueno y lo no tan bueno:
+- Lo bueno: Ahorramos muchísimo tiempo armando las páginas, el formulario quedó ordenado y
+  la página ya no se descuadra en pantallas pequeñas.
+- Lo no tan bueno: El código HTML se llena de nombres más largos y tuvimos que cuidar que
+  el sistema no nos cambiara nuestros colores originales (el verde ruta, el naranja y el azul noche).
+
+3. Conclusión:
+Realmente nos ahorró trabajo?
+Totalmente. Ahorramos más de la mitad del tiempo. La clave fue usar Bootstrap como
+el "esqueleto" para ordenar la página y nuestro propio código para darle la vida, los colores y la identidad a rueda libre.
+
