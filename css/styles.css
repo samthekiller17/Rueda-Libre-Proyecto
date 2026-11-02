@@ -152,60 +152,10 @@ footer a:focus {
 }
 
 
-/*#menu a {
-    display: block;
-    padding: var(--espacio-xs) var(--espacio-s);
-    color: var(--color-gris-asfalto);
-    text-decoration: none;
-    border-bottom: 0.1875rem solid transparent;
-}
-
-#menu a.activo {
-    color: var(--color-verde-ruta);
-    font-weight: 700;
-    border-bottom-color: var(--color-verde-ruta);
-}
-
-#menu a:hover,
-#menu a:focus {
-    background-color: var(--color-naranja-pedal);
-    color: var(--color-azul-noche);
-}
-
-#menu a:focus {
-    outline-color: var(--color-azul-noche);
-}
-
-.menu-interno a {
-    display: inline-block;
-    margin: 0 var(--espacio-xs) var(--espacio-xs);
-}*/
-
 
 /* ==========================================================
    5. COMPONENTES
    ========================================================== */
-.tarjeta {
-    position: relative;
-    width: 100%;
-    margin-bottom: var(--espacio-m);
-    padding: var(--espacio-m);
-    border: 1px solid var(--color-azul-noche);
-    border-radius: 0.5rem;
-}
-
-.tarjeta h4 {
-    margin-top: 0;
-}
-
-.tarjeta img {
-    display: block;
-    width: 100%;
-    height: auto;
-    margin-bottom: var(--espacio-s);
-    border-radius: 0.25rem;
-}
-
 .etiqueta-nuevo {
     position: absolute;
     top: 0;
@@ -217,53 +167,28 @@ footer a:focus {
     line-height: 1.5rem;
     border-radius: 0 0 0.25rem 0.25rem;
 }
-
-
-button,
-.boton-cta,
-.boton-whatsapp {
-    display: inline-block;
-    padding: var(--espacio-s) var(--espacio-l);
-    background-color: var(--color-verde-ruta);
-    color: var(--color-blanco);
-    font-weight: 700;
-    text-decoration: none;
-    border-radius: 0.25rem;
-}
-
-button {
-    border: 0;
-    cursor: pointer;
-}
-
-button:hover,
-.boton-cta:hover,
-.boton-whatsapp:hover {
-    background-color: var(--color-naranja-pedal);
-    color: var(--color-azul-noche);
-}
-
-button:focus,
-.boton-cta:focus,
-.boton-whatsapp:focus {
-    background-color: var(--color-azul-noche);
-    color: var(--color-blanco);
-}
-
+/* Botón flotante de WhatsApp */
 .boton-whatsapp {
     position: fixed;
     right: var(--espacio-s);
     bottom: var(--espacio-s);
     z-index: 10;
     padding: var(--espacio-xs) var(--espacio-m);
+    background-color: var(--color-verde-ruta);
+    color: var(--color-blanco);
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 0.25rem;
     border: 2px solid var(--color-blanco);
 }
-
+.boton-whatsapp:hover {
+    background-color: var(--color-naranja-pedal);
+    color: var(--color-azul-noche);
+}
 .boton-whatsapp:focus {
     box-shadow: 0 0 0 0.5rem var(--color-blanco);
 }
-
-
+/* Tablas semánticas */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -271,25 +196,21 @@ table {
     font-size: 0.75rem;
     line-height: 1.4;
 }
-
 caption {
     color: var(--color-gris-asfalto);
     text-align: left;
     padding-bottom: var(--espacio-xs);
 }
-
 th,
 td {
     border: 1px solid var(--color-azul-noche);
     padding: 0.375rem 0.1875rem;
     text-align: left;
 }
-
 thead th {
     background-color: var(--color-azul-noche);
     color: var(--color-blanco);
 }
-
 .enlace-saltar {
     position: absolute;
     top: -6rem;
@@ -297,12 +218,8 @@ thead th {
     z-index: 20;
     padding: var(--espacio-xs) var(--espacio-m);
 }
-
 .enlace-saltar:focus {
     top: var(--espacio-xs);
-    background-color: var(--color-naranja-pedal);
-    color: var(--color-azul-noche);
-    outline-color: var(--color-blanco);
 }
 
 
