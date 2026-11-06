@@ -297,3 +297,23 @@ En esta fase dimos el salto definitivo:
 Capturas de evidencia guardadas en img/capturas/:
 - antes.png: El sitio con el diseño básico previo a la personalización de marca.
 - despues.png: El resultado final con la paleta de Rueda Libre, íconos y componentes unificados.
+
+
+Del prototipo al proyecto real: CLI y botones
+
+Qué encontré en output.css
+- Una clase que sí uso, por ejemplo rounded-lg o hover:bg-white: aparece con su regla de CSS.
+- Una clase que no uso, bg-pink-500: no aparece. Tampoco el color rosado.
+- Por qué: la CLI revisa mis archivos, busca los nombres de clases que están escritos y genera solo el CSS de esos.
+  Si la clase no está escrita en el HTML, no se crea.
+- Lo comprobé: escribí bg-pink-500 en el HTML, volví a ejecutar la CLI y apareció. La quité y desapareció.
+- Ventaja: el CSS pesa poco (unos 15 KB sin comprimir), solo trae lo que usa la página.
+- Cuidado: si armo un nombre de clase uniendo pedazos de texto en JavaScript, la CLI no lo ve y no se genera.
+
+Botones (principal, secundario y de contorno)
+- Principal: fondo naranja, texto azul noche, sombra. Al pasar el mouse se vuelve blanco y la sombra crece.
+- Secundario: fondo blanco. Al pasar el mouse se vuelve gris claro.
+- De contorno: borde blanco sin relleno. Al pasar el mouse se rellena de blanco y el texto pasa a azul noche.
+- Quité el contorno del navegador (focus:outline-none) y puse un anillo propio: ring-4 con separación (ring-offset-2).
+  Solo aparece al navegar con teclado (focus-visible), no al hacer clic con el mouse.
+
