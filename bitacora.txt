@@ -340,3 +340,24 @@ Reglas del kit (las mismas en todos los componentes)
    Azul noche sobre fondo claro; blanco o naranja sobre fondo oscuro.
 6. Estados: todo componente que se puede usar tiene hover: y foco visible. Ningún estado mueve el contenido.
 7. El color nunca es lo único que informa: la etiqueta dice "Nivel: Fácil" y cada alerta tiene título (Información, Éxito, Advertencia).
+
+
+Maquetacion de la landing
+
+Un mismo contenedor para todo
+- Encabezado, las cuatro secciones y el pie usan: mx-auto w-full max-w-6xl px-6.
+- Así todo queda alineado con el mismo ancho máximo (1152 px) y el mismo margen lateral.
+- Cada sección usa también el mismo espacio vertical: py-16 sm:py-24.
+
+Dónde usé flex y dónde grid
+- Encabezado: flex con items-center (centrado vertical) y justify-between (logo a un lado, botón al otro). Es una sola fila.
+- Pie: flex. Son 3 bloques en una fila (md:flex-row) con justify-between. En celular pasan a columna (flex-col).
+- Rutas: grid grid-cols-1 lg:grid-cols-3. Tres columnas iguales en escritorio.
+- ¿Cómo funciona?: grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4.
+
+Por qué grid en los cuatro pasos (y no flex)
+- Los cuatro pasos son piezas del mismo tamaño que deben quedar en columnas iguales.
+- Con grid le digo cuántas columnas quiero (1, 2 o 4 según la pantalla) y todas miden lo mismo, sin importar cuánto texto tenga cada paso.
+- Con flex el ancho depende del contenido: un paso con más texto saldría más ancho que otro, y al pasar a dos filas habría que ajustar cada elemento a mano.
+- Flex sirve mejor cuando es una sola fila o columna y los elementos pueden tener tamaños distintos (encabezado y pie).
+- Lo mismo aplica a las rutas: grid de 3 columnas.
