@@ -23,3 +23,38 @@
     --font-titulos: "Montserrat", Arial, Helvetica, sans-serif;
     --font-texto: "Open Sans", Arial, Helvetica, sans-serif;
 }
+
+/* Botones del kit: solo 3 clases propias, hechas con utilidades de Tailwind (@apply).
+   Todo lo demás (cards, etiquetas, campos) se queda con utilidades en el HTML. */
+@layer components {
+    /* Base compartida por los tres botones */
+    .btn-principal,
+    .btn-secundario,
+    .btn-contorno {
+        @apply inline-block rounded-lg px-8 py-3 text-center text-lg font-bold
+               transition duration-150
+               focus:outline-none focus-visible:ring-4 focus-visible:ring-offset-2
+               focus-visible:ring-offset-azul-noche dark:focus-visible:ring-offset-black;
+    }
+
+    /* Para fondo oscuro: naranja, sombra grande, pasa a blanco con el mouse */
+    .btn-principal {
+        @apply bg-naranja-pedal text-azul-noche shadow-lg
+               hover:bg-white hover:shadow-xl
+               focus-visible:ring-white;
+    }
+
+    /* Blanco, pasa a amarillo farol con el mouse */
+    .btn-secundario {
+        @apply bg-white text-azul-noche shadow-md
+               hover:bg-amarillo-farol hover:shadow-lg
+               focus-visible:ring-naranja-pedal;
+    }
+
+    /* Solo borde: se rellena de blanco con el mouse */
+    .btn-contorno {
+        @apply border-2 border-white text-white
+               hover:bg-white hover:text-azul-noche
+               focus-visible:ring-naranja-pedal;
+    }
+}

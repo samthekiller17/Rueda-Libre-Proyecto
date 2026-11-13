@@ -361,3 +361,66 @@ Por qué grid en los cuatro pasos (y no flex)
 - Con flex el ancho depende del contenido: un paso con más texto saldría más ancho que otro, y al pasar a dos filas habría que ajustar cada elemento a mano.
 - Flex sirve mejor cuando es una sola fila o columna y los elementos pueden tener tamaños distintos (encabezado y pie).
 - Lo mismo aplica a las rutas: grid de 3 columnas.
+
+
+Codigo legible y veredico
+
+Código más ordenado y comparativa Bootstrap vs Tailwind
+
+1. Qué se repetía más en la landing (index.html)
+| Pieza | Veces | Clases cada vez |
+| Botón principal sobre fondo oscuro | 3 | 20 |
+| Botón principal dentro de las cards | 3 | 25 |
+| Enlaces de texto del encabezado y el pie | 7 | 13 |
+| Card de ruta | 3 | 16 |
+| Cuadro de cada paso de "¿Cómo funciona?" | 4 | 9 |
+| Campo de formulario (en el kit) | 2 | 28 |
+- Los botones eran lo más pesado: 8 botones con 20 a 25 clases cada uno.
+
+2. Qué hice
+- Creé solo 3 clases propias con @apply, dentro de @layer components en src/input.css: btn-principal, btn-secundario y btn-contorno.
+- Los tres botones comparten una base (tamaño, bordes redondeados, letra, anillo de foco) y cada uno añade sus colores y su efecto al pasar el mouse.
+- Un botón pasó de 20 o 25 clases a 1 (btn-principal). El botón principal de las cards usa btn-principal y suma 9 clases más para su versión sobre fondo claro.
+- Las cards, etiquetas y campos quedaron igual que en el kit, solo con las clases ordenadas.
+- Ordené las clases de cada elemento así: diseño (layout), espaciado, letra, color y apariencia, y por último estados (transición, hover, focus).
+- Resultado: en index.html bajé de 852 a 712 clases escritas y de 23,5 KB a 21,3 KB de HTML.
+
+3. Comprobé que se ve igual
+- Comparé capturas de antes y después, píxel por píxel, de la landing y del kit, a 360, 768, 1024 y 1280 px, en modo claro y oscuro: las 16 son idénticas.
+- Comparé también 78 combinaciones de botón y estado (normal, hover y foco con teclado): cero diferencias.
+
+4. Tamaño (medido con la opción --minify)
+| Archivo | Sin comprimir | Comprimido (gzip) | Comprimido (brotli) |
+| Tailwind: output.css de la landing y el kit | 25,9 KB | 4,8 KB | 4,2 KB |
+| Bootstrap 5.3.3: CSS | 227,3 KB | 30,1 KB | 22,2 KB |
+| Bootstrap 5.3.3: JavaScript (bundle) | 78,8 KB | 23,2 KB | 20,7 KB |
+| Bootstrap Icons 1.11.3: CSS | 83,9 KB | 13,0 KB | 10,1 KB |
+| Bootstrap Icons: fuente de iconos | 127,3 KB | 127,3 KB | 127,3 KB |
+- La versión 2.0 del sitio carga el CSS y el JavaScript de Bootstrap y los iconos: unos 43 KB comprimidos solo entre CSS y JS, sin contar iconos.
+- La página con Tailwind carga 4,2 KB de CSS y nada de JavaScript.
+- Ojo: no es una comparación exacta. El CSS de Tailwind solo cubre la landing y el kit (una página), mientras que Bootstrap cubre todo el sitio.
+  Tailwind crecería al migrar más páginas, pero Bootstrap pesa lo mismo aunque uses poco.
+- Los números salen de los mismos archivos que carga el sitio (mismas versiones). En DevTools > Network, la columna de tamaño transferido debe dar 
+  valores parecidos.
+
+5. Comparativa
+| Criterio | Bootstrap | Tailwind |
+| Curva de aprendizaje | Más fácil de empezar: un enlace y componentes listos (navbar, carrusel, modal). Con btn btn-success ya tienes un botón. | Más difícil al inicio: hay que saber CSS (flex, grid, espaciado) y usar Node. Mi primer npm install falló por no tener package.json. Después se vuelve rápido y predecible. |
+| Personalización | Hubo que pelear con él: su verde (#198754) no cumplía el contraste, btn-outline-* traía colores fijos y su reboot cambió tablas y formularios. Terminé con 321 líneas de CSS propio. | Con unas 20 líneas de @theme quedaron colores y fuentes de la marca como utilidades. El modo oscuro salió con el prefijo dark: sin CSS extra. Sin conflictos. |
+| Tamaño final | CSS 22,2 KB + JS 20,7 KB (brotli), fijo en todas las páginas. | CSS 4,2 KB (brotli) y 0 KB de JavaScript. |
+| Casos de uso | Prototipos rápidos, sitios con componentes interactivos ya hechos, equipos sin diseñador. | Diseño propio de marca, landings, sistemas de componentes, modo oscuro, páginas que se abren desde el celular. |
+- Lo malo de Tailwind: el HTML se llena de clases (se arregla en parte con @apply y componentes), necesita un paso de compilación y hay que subir output.css al repositorio, y no trae carrusel ni modal ya hechos.
+- Lo malo de Bootstrap: pesa más aunque uses poco, y para que se vea como la marca hay que sobrescribirlo.
+
+6. Recomendación para Rueda Libre
+Recomiendo Tailwind para la próxima versión de todo el sitio, migrando por páginas.
+- La marca es muy propia (colores, fuentes, modo oscuro) y con Bootstrap tuve que corregirlo una y otra vez; con Tailwind ya está resuelto en
+  un tema y en un kit de componentes.
+- La mayoría de las visitas vienen de celular, y Tailwind carga unas diez veces menos CSS y nada de JavaScript.
+- La landing, el kit y el tema ya existen, así que no se parte de cero.
+- Lo que cuesta: el carrusel, el modal y el menú del celular del sitio actual dependen del JavaScript de Bootstrap. Habría que reemplazarlos: 
+  el modal con la etiqueta nativa <dialog>, el menú con un botón sencillo, y el carrusel por tarjetas o uno con botón de pausa (el actual se mueve
+  solo sin pausa, lo cual ya era un problema de accesibilidad).
+- No mezclaría los dos en la misma página: cada página se migra completa. Mientras tanto, las que no se hayan migrado siguen con Bootstrap.
+- Cambiaría la recomendación a Bootstrap si el sitio necesitara muchos componentes interactivos o si el equipo no quisiera usar Node ni un paso 
+  de compilación.
