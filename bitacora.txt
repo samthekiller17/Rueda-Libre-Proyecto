@@ -317,3 +317,26 @@ Botones (principal, secundario y de contorno)
 - Quité el contorno del navegador (focus:outline-none) y puse un anillo propio: ring-4 con separación (ring-offset-2).
   Solo aparece al navegar con teclado (focus-visible), no al hacer clic con el mouse.
 
+Kit de componentes Rueda Nocturna v0.1
+
+Reglas del kit (las mismas en todos los componentes)
+
+1. Bordes redondeados
+   - rounded-lg: botones, campos, alertas y cuadros pequeños.
+   - rounded-2xl: superficies grandes (card y paneles).
+   - rounded-full: solo etiquetas pequeñas (nivel de la ruta).
+2. Espaciado (solo múltiplos de 4 px)
+   - Relleno interno: px-4 py-3 en campos, p-4 en alertas, p-6 en card y paneles, px-8 py-3 en botones.
+   - Separación entre elementos: gap-4; entre bloques de una sección: space-y-6; entre secciones: space-y-16.
+3. Colores
+   - Azul noche #14213D para texto, bordes en foco y fondos oscuros.
+   - Naranja #F39A2B para acciones principales y acentos.
+   - Crema #FAF6EF para el fondo de la página.
+   - Texto secundario: slate-600 (nunca más claro, por el contraste).
+   - Avisos: azul (información), verde (éxito) y ámbar (advertencia), siempre fondo -50, borde -500 y texto -900.
+   - El naranja no se usa como color de texto sobre fondo claro.
+4. Sombras: shadow-md en reposo; shadow-lg o shadow-xl al pasar el mouse (shadow-2xl en la card).
+5. Foco con teclado: sin contorno del navegador; anillo ring-4 con separación ring-offset-2.
+   Azul noche sobre fondo claro; blanco o naranja sobre fondo oscuro.
+6. Estados: todo componente que se puede usar tiene hover: y foco visible. Ningún estado mueve el contenido.
+7. El color nunca es lo único que informa: la etiqueta dice "Nivel: Fácil" y cada alerta tiene título (Información, Éxito, Advertencia).
