@@ -439,3 +439,29 @@ Tiempo real: 30 minutos.
 - Solo con teclado (Tab, flechas, Espacio y Enter): llegué desde el enlace "Inscripción" del encabezado, rellené todo y envié.
   El orden del foco fue: nombre, correo, celular, ruta, día, acompañantes, nivel, bicicleta, condiciones y botón. En todos se ve el anillo de foco.
 - Se ve bien a 360, 768 y 1280 px, sin scroll horizontal, en modo claro y oscuro.
+
+
+Contrarreloj 2: un solo ecosistema
+
+Tiempo real: 25 minutos.
+
+1. Navegación cruzada y rutas relativas:
+- Desde el sitio principal (index.html, tarifas.html, reservas.html): se agregó el enlace "Rueda Nocturna" en la
+  navbar hacia nocturna/index.html (o ../nocturna/index.html).
+- En el carrusel de inicio: se añadió una cuarta diapositiva promocional que conduce a la landing nocturna.
+- Desde la landing (nocturna/index.html): el logo ahora enlaza a ../index.html y se agregó el botón "Reserva tu bici" 
+  hacia ../Paginas/reservas.html en el encabezado, portada y pie de página.
+- Se verificaron todos los enlaces en local: cero errores 404.
+
+2. Coherencia de marca:
+- Colores idénticos: Verde Ruta, Naranja Pedal, Azul Noche, Crema y Gris Asfalto en Bootstrap variables
+  y en el @theme de Tailwind.
+- Tipografías unificadas: Montserrat para títulos y Open Sans para textos en ambos entornos.
+- Datos de contacto unificados en el pie de página (hola@ruedalibre.example y horarios de atención).
+
+
+Contrarreloj 3: requerimiento de ultima hora
+
+Tiempo real: 20 minutos.
+
+

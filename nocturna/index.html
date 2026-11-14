@@ -18,26 +18,37 @@
     <header class="bg-azul-noche text-white dark:bg-black">
         <div
             class="mx-auto w-full max-w-6xl flex flex-col items-center md:flex-row md:justify-between px-4 gap-4 py-4 sm:px-6 lg:px-8">
-            <a href="#inicio"
-                class="flex items-center gap-3 font-titulos text-xl font-extrabold rounded-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-azul-noche dark:focus-visible:ring-offset-black dark:focus-visible:ring-offset-black">
-                <img src="../img/Icono_Rueda_Libre.jpg" alt="" width="40" height="40" class="h-10 w-10 rounded-lg">
+            <a href="../index.html"
+                class="flex items-center gap-3 font-titulos text-xl font-extrabold rounded-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-azul-noche dark:focus-visible:ring-offset-black"
+                aria-label="Rueda Nocturna - Volver al inicio de Rueda Libre">
+                <img src="../img/Icono_Rueda_Libre.jpg" alt="Logo de Rueda Libre" width="40" height="40" class="h-10 w-10 rounded-lg">
                 Rueda Nocturna
             </a>
 
-            <nav aria-label="Secciones de la página" class="hidden md:flex gap-6">
+            <nav aria-label="Secciones de la página" class="hidden md:flex gap-6 items-center">
                 <a href="#rutas"
-                    class="text-base font-bold underline underline-offset-4 rounded-lg text-white hover:text-amarillo-farol focus:outline-none focus-visible:ring-4 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-azul-noche dark:focus-visible:ring-offset-black">Rutas</a>
+                    class="text-base font-bold underline underline-offset-4 rounded-lg text-white hover:text-amarillo-farol focus:outline-none focus-visible:ring-4 focus-visible:ring-white">Rutas</a>
+                <a href="#planes"
+                    class="text-base font-bold underline underline-offset-4 rounded-lg text-white hover:text-amarillo-farol focus:outline-none focus-visible:ring-4 focus-visible:ring-white">Planes</a>
                 <a href="#como-funciona"
-                    class="text-base font-bold underline underline-offset-4 rounded-lg text-white hover:text-amarillo-farol focus:outline-none focus-visible:ring-4 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-azul-noche dark:focus-visible:ring-offset-black">¿Cómo
+                    class="text-base font-bold underline underline-offset-4 rounded-lg text-white hover:text-amarillo-farol focus:outline-none focus-visible:ring-4 focus-visible:ring-white">¿Cómo
                     funciona?</a>
                 <a href="#inscripcion"
-                    class="text-base font-bold underline underline-offset-4 rounded-lg text-white hover:text-amarillo-farol focus:outline-none focus-visible:ring-4 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-azul-noche dark:focus-visible:ring-offset-black">Inscripción</a>
+                    class="text-base font-bold underline underline-offset-4 rounded-lg text-white hover:text-amarillo-farol focus:outline-none focus-visible:ring-4 focus-visible:ring-white">Inscripción</a>
+                <a href="../index.html"
+                    class="text-base font-bold underline underline-offset-4 rounded-lg text-white hover:text-amarillo-farol focus:outline-none focus-visible:ring-4 focus-visible:ring-white">Sitio principal</a>
             </nav>
 
-            <a href="#inscripcion"
-                class="btn-principal">
-                Inscríbete
-            </a>
+            <div class="flex items-center gap-3">
+                <a href="../Paginas/reservas.html"
+                    class="btn-secundario text-sm py-2 px-4">
+                    Reserva tu bici
+                </a>
+                <a href="#inscripcion"
+                    class="btn-principal text-sm py-2 px-4">
+                    Inscríbete
+                </a>
+            </div>
         </div>
     </header>
 
@@ -73,6 +84,10 @@
                         <a href="#inscripcion"
                             class="btn-principal">
                             Inscríbete
+                        </a>
+                        <a href="../Paginas/reservas.html"
+                            class="btn-secundario">
+                            Reserva tu bici
                         </a>
                         <a href="#rutas"
                             class="btn-secundario">
@@ -217,6 +232,137 @@
                             <a href="#inscripcion"
                                 class="btn-principal w-full hover:bg-azul-noche hover:text-white focus-visible:ring-azul-noche focus-visible:ring-offset-white dark:hover:bg-amarillo-farol dark:hover:text-azul-noche dark:focus-visible:ring-amarillo-farol dark:focus-visible:ring-offset-azul-noche">
                                 Inscríbete
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- PLANES RUEDA NOCTURNA: 1 columna en móvil y 3 desde lg -->
+        <section id="planes" class="py-12 sm:py-16 lg:py-24" aria-labelledby="titulo-planes">
+            <div class="mx-auto w-full max-w-6xl px-4 space-y-8 sm:px-6 lg:px-8">
+                <div class="space-y-3 text-center">
+                    <h2 id="titulo-planes"
+                        class="font-titulos text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl">Planes Rueda Nocturna</h2>
+                    <p class="mx-auto max-w-2xl text-lg text-gris-asfalto dark:text-crema/80">
+                        Elige la modalidad perfecta para tu noche: individual, en pareja o con tu grupo de amigos.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+                    <!-- Plan Individual -->
+                    <article
+                        class="flex flex-col justify-between rounded-2xl border-2 border-azul-noche/15 bg-white p-6 sm:p-8 shadow-md transition-shadow hover:shadow-xl dark:border-white/15 dark:bg-white/5">
+                        <div class="space-y-6">
+                            <div class="h-7"></div>
+                            <h3 class="font-titulos text-2xl font-extrabold leading-tight">Individual</h3>
+                            <p class="font-titulos text-4xl font-extrabold dark:text-amarillo-farol">
+                                $55.000
+                                <span class="text-sm font-normal text-gris-asfalto dark:text-crema/80">por persona</span>
+                            </p>
+                            <ul class="flex flex-col gap-3 text-base pt-2 border-t border-azul-noche/15 dark:border-white/15">
+                                <li class="flex items-center gap-3">
+                                    <svg class="h-5 w-5 shrink-0 text-verde-ruta dark:text-amarillo-farol" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                    <span>Bicicleta y casco</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <svg class="h-5 w-5 shrink-0 text-verde-ruta dark:text-amarillo-farol" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                    <span>Luces LED y chaleco</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <svg class="h-5 w-5 shrink-0 text-verde-ruta dark:text-amarillo-farol" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                    <span>Guía certificado</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <svg class="h-5 w-5 shrink-0 text-verde-ruta dark:text-amarillo-farol" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                    <span>Hidratación</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="pt-8">
+                            <a href="#inscripcion"
+                                class="btn-principal w-full text-center hover:bg-azul-noche hover:text-white dark:hover:bg-amarillo-farol dark:hover:text-azul-noche">
+                                Elegir Individual
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Plan Pareja (Destacado: Más elegido) -->
+                    <article
+                        class="flex flex-col justify-between rounded-2xl border-2 border-naranja-pedal bg-crema p-6 sm:p-8 shadow-xl transition-shadow hover:shadow-2xl dark:border-amarillo-farol dark:bg-white/10">
+                        <div class="space-y-6">
+                            <div class="flex items-center justify-between h-7">
+                                <span
+                                    class="px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-naranja-pedal text-azul-noche dark:bg-amarillo-farol">
+                                    Más elegido
+                                </span>
+                            </div>
+                            <h3 class="font-titulos text-2xl font-extrabold leading-tight">Pareja</h3>
+                            <p class="font-titulos text-4xl font-extrabold dark:text-amarillo-farol">
+                                $99.000
+                                <span class="text-sm font-normal text-gris-asfalto dark:text-crema/80">las dos personas</span>
+                            </p>
+                            <ul class="flex flex-col gap-3 text-base pt-2 border-t border-azul-noche/15 dark:border-white/15">
+                                <li class="flex items-center gap-3">
+                                    <svg class="h-5 w-5 shrink-0 text-verde-ruta dark:text-amarillo-farol" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                    <span>Todo lo del plan Individual</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <svg class="h-5 w-5 shrink-0 text-verde-ruta dark:text-amarillo-farol" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                    <span>Foto del recorrido</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <svg class="h-5 w-5 shrink-0 text-verde-ruta dark:text-amarillo-farol" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                    <span>Snack para dos</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <svg class="h-5 w-5 shrink-0 text-verde-ruta dark:text-amarillo-farol" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                    <span>Prioridad en la ruta</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="pt-8">
+                            <a href="#inscripcion"
+                                class="btn-principal w-full text-center hover:bg-azul-noche hover:text-white dark:hover:bg-amarillo-farol dark:hover:text-azul-noche">
+                                Elegir Pareja
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Plan Grupo (4 a 8) -->
+                    <article
+                        class="flex flex-col justify-between rounded-2xl border-2 border-azul-noche/15 bg-white p-6 sm:p-8 shadow-md transition-shadow hover:shadow-xl dark:border-white/15 dark:bg-white/5">
+                        <div class="space-y-6">
+                            <div class="h-7"></div>
+                            <h3 class="font-titulos text-2xl font-extrabold leading-tight">Grupo (4 a 8)</h3>
+                            <p class="font-titulos text-4xl font-extrabold dark:text-amarillo-farol">
+                                $45.000
+                                <span class="text-sm font-normal text-gris-asfalto dark:text-crema/80">por persona</span>
+                            </p>
+                            <ul class="flex flex-col gap-3 text-base pt-2 border-t border-azul-noche/15 dark:border-white/15">
+                                <li class="flex items-center gap-3">
+                                    <svg class="h-5 w-5 shrink-0 text-verde-ruta dark:text-amarillo-farol" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                    <span>Todo lo del plan Individual</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <svg class="h-5 w-5 shrink-0 text-verde-ruta dark:text-amarillo-farol" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                    <span>Guía exclusivo</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <svg class="h-5 w-5 shrink-0 text-verde-ruta dark:text-amarillo-farol" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                    <span>Horario a elección</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <svg class="h-5 w-5 shrink-0 text-verde-ruta dark:text-amarillo-farol" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                    <span>Fotos del grupo</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="pt-8">
+                            <a href="#inscripcion"
+                                class="btn-principal w-full text-center hover:bg-azul-noche hover:text-white dark:hover:bg-amarillo-farol dark:hover:text-azul-noche">
+                                Elegir Grupo
                             </a>
                         </div>
                     </article>
@@ -389,6 +535,9 @@
                     <li><a href="#rutas"
                             class="text-base font-bold underline underline-offset-4 rounded-lg text-white hover:text-amarillo-farol focus:outline-none focus-visible:ring-4 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-azul-noche dark:focus-visible:ring-offset-black">Rutas</a>
                     </li>
+                    <li><a href="#planes"
+                            class="text-base font-bold underline underline-offset-4 rounded-lg text-white hover:text-amarillo-farol focus:outline-none focus-visible:ring-4 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-azul-noche dark:focus-visible:ring-offset-black">Planes</a>
+                    </li>
                     <li><a href="#como-funciona"
                             class="text-base font-bold underline underline-offset-4 rounded-lg text-white hover:text-amarillo-farol focus:outline-none focus-visible:ring-4 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-azul-noche dark:focus-visible:ring-offset-black">¿Cómo
                             funciona?</a></li>
@@ -398,13 +547,17 @@
                     <li><a href="../index.html"
                             class="text-base font-bold underline underline-offset-4 rounded-lg text-white hover:text-amarillo-farol focus:outline-none focus-visible:ring-4 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-azul-noche dark:focus-visible:ring-offset-black">Sitio
                             principal</a></li>
+                    <li><a href="../Paginas/reservas.html"
+                            class="text-base font-bold underline underline-offset-4 rounded-lg text-white hover:text-amarillo-farol focus:outline-none focus-visible:ring-4 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-azul-noche dark:focus-visible:ring-offset-black">Reserva
+                            tu bici</a></li>
                 </ul>
             </nav>
 
             <div class="md:max-w-xs space-y-3">
-                <h2 class="font-titulos text-xl font-extrabold">Salidas</h2>
+                <h2 class="font-titulos text-xl font-extrabold">Salidas y Contacto</h2>
                 <p class="text-base text-crema">Jueves a sábado, de noche.</p>
-                <p class="text-base text-crema">Punto de encuentro: sede de Rueda Libre.</p>
+                <p class="text-base text-crema"><a href="mailto:hola@ruedalibre.example" class="underline hover:text-amarillo-farol">hola@ruedalibre.example</a></p>
+                <p class="text-xs text-crema/70">&copy; 2026 Rueda Libre</p>
             </div>
         </div>
     </footer>
