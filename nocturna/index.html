@@ -34,7 +34,7 @@
                     class="text-base font-bold underline underline-offset-4 rounded-lg text-white hover:text-amarillo-farol focus:outline-none focus-visible:ring-4 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-azul-noche dark:focus-visible:ring-offset-black">Inscripción</a>
             </nav>
 
-            <a href="../Paginas/reservas.html"
+            <a href="#inscripcion"
                 class="btn-principal">
                 Inscríbete
             </a>
@@ -70,7 +70,7 @@
                     </ul>
 
                     <div class="flex flex-col justify-center sm:flex-row gap-4 pt-2">
-                        <a href="../Paginas/reservas.html"
+                        <a href="#inscripcion"
                             class="btn-principal">
                             Inscríbete
                         </a>
@@ -132,7 +132,7 @@
                             </p>
 
                             
-                            <a href="../Paginas/reservas.html"
+                            <a href="#inscripcion"
                                 class="btn-principal w-full hover:bg-azul-noche hover:text-white focus-visible:ring-azul-noche focus-visible:ring-offset-white dark:hover:bg-amarillo-farol dark:hover:text-azul-noche dark:focus-visible:ring-amarillo-farol dark:focus-visible:ring-offset-azul-noche">
                                 Inscríbete
                             </a>
@@ -173,7 +173,7 @@
                             </p>
 
                             
-                            <a href="../Paginas/reservas.html"
+                            <a href="#inscripcion"
                                 class="btn-principal w-full hover:bg-azul-noche hover:text-white focus-visible:ring-azul-noche focus-visible:ring-offset-white dark:hover:bg-amarillo-farol dark:hover:text-azul-noche dark:focus-visible:ring-amarillo-farol dark:focus-visible:ring-offset-azul-noche">
                                 Inscríbete
                             </a>
@@ -214,7 +214,7 @@
                             </p>
 
                             
-                            <a href="../Paginas/reservas.html"
+                            <a href="#inscripcion"
                                 class="btn-principal w-full hover:bg-azul-noche hover:text-white focus-visible:ring-azul-noche focus-visible:ring-offset-white dark:hover:bg-amarillo-farol dark:hover:text-azul-noche dark:focus-visible:ring-amarillo-farol dark:focus-visible:ring-offset-azul-noche">
                                 Inscríbete
                             </a>
@@ -259,18 +259,116 @@
         </section>
 
         <!-- FRANJA DE INSCRIPCIÓN -->
-        <section id="inscripcion" class="py-12 sm:py-16 lg:py-24 bg-azul-noche text-white dark:bg-black"
-            aria-labelledby="titulo-inscripcion">
+        <!-- INSCRIPCIÓN -->
+        <section id="inscripcion" class="py-12 sm:py-16 lg:py-24" aria-labelledby="titulo-inscripcion">
             <div class="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
-                <div class="mx-auto max-w-3xl space-y-6 text-center">
-                    <h2 id="titulo-inscripcion" class="font-titulos text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl dark:text-amarillo-farol">
-                        Reserva tu
-                        lugar en Rueda Nocturna</h2>
-                    <p class="text-lg text-crema">Elige tu ruta y asegura tu lugar en la próxima salida.</p>
-                    <a href="../Paginas/reservas.html"
-                        class="btn-principal">
-                        Inscríbete
-                    </a>
+                <div class="mx-auto max-w-3xl space-y-8">
+                    <div class="space-y-3 text-center">
+                        <h2 id="titulo-inscripcion" class="font-titulos text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl">Reserva tu lugar en Rueda Nocturna</h2>
+                        <p class="text-lg text-gris-asfalto dark:text-crema/80">Llena el formulario para inscribirte. Todos los campos son obligatorios.</p>
+                    </div>
+
+                    <!-- Sin JavaScript: el navegador valida y, si todo está bien, envía (GET a esta misma sección).
+                         PENDIENTE: cambiar action y method por el servicio donde llegarán las inscripciones. -->
+                    <form id="form-inscripcion" action="#inscripcion" method="get" class="space-y-8">
+
+                        <fieldset class="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 rounded-2xl border border-azul-noche/15 bg-white shadow-md dark:border-white/15 dark:bg-white/5">
+                            <legend class="px-2 font-titulos text-xl font-extrabold">Tus datos</legend>
+
+                            <div class="md:col-span-2">
+                                <label for="nombre" class="block text-base font-bold">Nombre completo</label>
+                                <input id="nombre" name="nombre" type="text" required minlength="3" autocomplete="name" placeholder="Ana María Gómez" aria-describedby="ayuda-nombre" class="block w-full mt-1 px-4 py-3 text-base rounded-lg border border-gris-asfalto bg-white text-azul-noche shadow-md dark:border-crema/60 dark:bg-black dark:text-crema placeholder:text-gris-asfalto hover:border-azul-noche focus:border-azul-noche focus:outline-none focus:ring-4 focus:ring-azul-noche focus:ring-offset-2 focus:ring-offset-crema dark:placeholder:text-crema/70 dark:hover:border-amarillo-farol dark:focus:border-amarillo-farol dark:focus:ring-amarillo-farol dark:focus:ring-offset-azul-noche">
+                                <p id="ayuda-nombre" class="mt-1 text-sm text-gris-asfalto dark:text-crema/80">Mínimo 3 letras.</p>
+                            </div>
+
+                            <div>
+                                <label for="correo" class="block text-base font-bold">Correo electrónico</label>
+                                <input id="correo" name="correo" type="email" required autocomplete="email" placeholder="nombre@correo.com" aria-describedby="ayuda-correo" class="block w-full mt-1 px-4 py-3 text-base rounded-lg border border-gris-asfalto bg-white text-azul-noche shadow-md dark:border-crema/60 dark:bg-black dark:text-crema placeholder:text-gris-asfalto hover:border-azul-noche focus:border-azul-noche focus:outline-none focus:ring-4 focus:ring-azul-noche focus:ring-offset-2 focus:ring-offset-crema dark:placeholder:text-crema/70 dark:hover:border-amarillo-farol dark:focus:border-amarillo-farol dark:focus:ring-amarillo-farol dark:focus:ring-offset-azul-noche">
+                                <p id="ayuda-correo" class="mt-1 text-sm text-gris-asfalto dark:text-crema/80">Te enviaremos la confirmación a este correo.</p>
+                            </div>
+
+                            <div>
+                                <label for="celular" class="block text-base font-bold">Celular</label>
+                                <input id="celular" name="celular" type="tel" required inputmode="numeric" maxlength="10" pattern="3[0-9]{9}" title="10 números que empiecen por 3, sin espacios. Ejemplo: 3001234567" autocomplete="tel-national" placeholder="3001234567" aria-describedby="ayuda-celular" class="block w-full mt-1 px-4 py-3 text-base rounded-lg border border-gris-asfalto bg-white text-azul-noche shadow-md dark:border-crema/60 dark:bg-black dark:text-crema placeholder:text-gris-asfalto hover:border-azul-noche focus:border-azul-noche focus:outline-none focus:ring-4 focus:ring-azul-noche focus:ring-offset-2 focus:ring-offset-crema dark:placeholder:text-crema/70 dark:hover:border-amarillo-farol dark:focus:border-amarillo-farol dark:focus:ring-amarillo-farol dark:focus:ring-offset-azul-noche">
+                                <p id="ayuda-celular" class="mt-1 text-sm text-gris-asfalto dark:text-crema/80">10 números, empieza por 3. Sin espacios.</p>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 rounded-2xl border border-azul-noche/15 bg-white shadow-md dark:border-white/15 dark:bg-white/5">
+                            <legend class="px-2 font-titulos text-xl font-extrabold">Tu salida</legend>
+
+                            <div>
+                                <label for="ruta" class="block text-base font-bold">Ruta</label>
+                                <select id="ruta" name="ruta" required aria-describedby="ayuda-ruta" class="block w-full mt-1 px-4 py-3 text-base rounded-lg border border-gris-asfalto bg-white text-azul-noche shadow-md dark:border-crema/60 dark:bg-black dark:text-crema dark:scheme-dark placeholder:text-gris-asfalto hover:border-azul-noche focus:border-azul-noche focus:outline-none focus:ring-4 focus:ring-azul-noche focus:ring-offset-2 focus:ring-offset-crema dark:placeholder:text-crema/70 dark:hover:border-amarillo-farol dark:focus:border-amarillo-farol dark:focus:ring-amarillo-farol dark:focus:ring-offset-azul-noche">
+                                    <option value="" disabled selected>Elige una ruta</option>
+                                    <option value="luces-del-centro">Luces del Centro · 10 km · $55.000</option>
+                                    <option value="miradores-de-la-ciudad">Miradores de la Ciudad · 16 km · $75.000</option>
+                                    <option value="luna-en-las-palmas">Luna en Las Palmas · 22 km · $95.000</option>
+                                </select>
+                                <p id="ayuda-ruta" class="mt-1 text-sm text-gris-asfalto dark:text-crema/80">Las tres salen de la sede de Rueda Libre.</p>
+                            </div>
+
+                            <div>
+                                <label for="dia" class="block text-base font-bold">Día de salida</label>
+                                <select id="dia" name="dia" required aria-describedby="ayuda-dia" class="block w-full mt-1 px-4 py-3 text-base rounded-lg border border-gris-asfalto bg-white text-azul-noche shadow-md dark:border-crema/60 dark:bg-black dark:text-crema dark:scheme-dark placeholder:text-gris-asfalto hover:border-azul-noche focus:border-azul-noche focus:outline-none focus:ring-4 focus:ring-azul-noche focus:ring-offset-2 focus:ring-offset-crema dark:placeholder:text-crema/70 dark:hover:border-amarillo-farol dark:focus:border-amarillo-farol dark:focus:ring-amarillo-farol dark:focus:ring-offset-azul-noche">
+                                    <option value="" disabled selected>Elige un día</option>
+                                    <option value="jueves">Jueves</option>
+                                    <option value="viernes">Viernes</option>
+                                    <option value="sabado">Sábado</option>
+                                </select>
+                                <p id="ayuda-dia" class="mt-1 text-sm text-gris-asfalto dark:text-crema/80">Las salidas son de jueves a sábado.</p>
+                            </div>
+
+                            <div>
+                                <label for="acompanantes" class="block text-base font-bold">Número de acompañantes</label>
+                                <input id="acompanantes" name="acompanantes" type="number" required min="0" max="3" step="1" inputmode="numeric" placeholder="0" aria-describedby="ayuda-acompanantes" class="block w-full mt-1 px-4 py-3 text-base rounded-lg border border-gris-asfalto bg-white text-azul-noche shadow-md dark:border-crema/60 dark:bg-black dark:text-crema placeholder:text-gris-asfalto hover:border-azul-noche focus:border-azul-noche focus:outline-none focus:ring-4 focus:ring-azul-noche focus:ring-offset-2 focus:ring-offset-crema dark:placeholder:text-crema/70 dark:hover:border-amarillo-farol dark:focus:border-amarillo-farol dark:focus:ring-amarillo-farol dark:focus:ring-offset-azul-noche">
+                                <p id="ayuda-acompanantes" class="mt-1 text-sm text-gris-asfalto dark:text-crema/80">De 0 a 3 acompañantes.</p>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 rounded-2xl border border-azul-noche/15 bg-white shadow-md dark:border-white/15 dark:bg-white/5">
+                            <legend class="px-2 font-titulos text-xl font-extrabold">Tu experiencia</legend>
+
+                            <fieldset>
+                                <legend class="block text-base font-bold">Nivel de experiencia</legend>
+                                <div class="flex flex-col mt-1 gap-1">
+                                    <div class="flex items-center gap-3">
+                                        <input id="nivel-principiante" name="nivel" type="radio" value="principiante" required class="h-5 w-5 shrink-0 accent-azul-noche dark:accent-amarillo-farol dark:scheme-dark focus:outline-none focus-visible:ring-4 focus-visible:ring-azul-noche focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-amarillo-farol dark:focus-visible:ring-offset-azul-noche">
+                                        <label for="nivel-principiante" class="flex-1 py-1 text-base">Principiante</label>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <input id="nivel-intermedio" name="nivel" type="radio" value="intermedio" required class="h-5 w-5 shrink-0 accent-azul-noche dark:accent-amarillo-farol dark:scheme-dark focus:outline-none focus-visible:ring-4 focus-visible:ring-azul-noche focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-amarillo-farol dark:focus-visible:ring-offset-azul-noche">
+                                        <label for="nivel-intermedio" class="flex-1 py-1 text-base">Intermedio</label>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <input id="nivel-avanzado" name="nivel" type="radio" value="avanzado" required class="h-5 w-5 shrink-0 accent-azul-noche dark:accent-amarillo-farol dark:scheme-dark focus:outline-none focus-visible:ring-4 focus-visible:ring-azul-noche focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-amarillo-farol dark:focus-visible:ring-offset-azul-noche">
+                                        <label for="nivel-avanzado" class="flex-1 py-1 text-base">Avanzado</label>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <legend class="block text-base font-bold">¿Tienes bicicleta propia?</legend>
+                                <div class="flex flex-col mt-1 gap-1">
+                                    <div class="flex items-center gap-3">
+                                        <input id="bicicleta-si" name="bicicleta" type="radio" value="si" required class="h-5 w-5 shrink-0 accent-azul-noche dark:accent-amarillo-farol dark:scheme-dark focus:outline-none focus-visible:ring-4 focus-visible:ring-azul-noche focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-amarillo-farol dark:focus-visible:ring-offset-azul-noche">
+                                        <label for="bicicleta-si" class="flex-1 py-1 text-base">Sí</label>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <input id="bicicleta-no" name="bicicleta" type="radio" value="no" required class="h-5 w-5 shrink-0 accent-azul-noche dark:accent-amarillo-farol dark:scheme-dark focus:outline-none focus-visible:ring-4 focus-visible:ring-azul-noche focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-amarillo-farol dark:focus-visible:ring-offset-azul-noche">
+                                        <label for="bicicleta-no" class="flex-1 py-1 text-base">No</label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </fieldset>
+
+                        <div class="flex items-start gap-3">
+                            <input id="condiciones" name="condiciones" type="checkbox" value="si" required class="h-5 w-5 shrink-0 mt-1 accent-azul-noche dark:accent-amarillo-farol dark:scheme-dark focus:outline-none focus-visible:ring-4 focus-visible:ring-azul-noche focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-amarillo-farol dark:focus-visible:ring-offset-azul-noche">
+                            <label for="condiciones" class="flex-1 text-base">Acepto las condiciones del servicio de Rueda Nocturna.</label>
+                        </div>
+
+                        <button type="submit" class="btn-principal w-full md:w-auto cursor-pointer hover:bg-azul-noche hover:text-white focus-visible:ring-azul-noche focus-visible:ring-offset-white dark:hover:bg-amarillo-farol dark:hover:text-azul-noche dark:focus-visible:ring-amarillo-farol dark:focus-visible:ring-offset-azul-noche">Enviar inscripción</button>
+                    </form>
                 </div>
             </div>
         </section>

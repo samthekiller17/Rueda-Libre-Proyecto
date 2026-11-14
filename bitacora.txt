@@ -424,3 +424,18 @@ Recomiendo Tailwind para la próxima versión de todo el sitio, migrando por pá
 - No mezclaría los dos en la misma página: cada página se migra completa. Mientras tanto, las que no se hayan migrado siguen con Bootstrap.
 - Cambiaría la recomendación a Bootstrap si el sitio necesitara muchos componentes interactivos o si el equipo no quisiera usar Node ni un paso 
   de compilación.
+
+
+Contrarreloj 1: Inscripcion a rueda nocturna
+
+Tiempo real: 30 minutos.
+
+1. Pruebas
+- Formulario vacío: no se envía; el foco va al primer campo (nombre) y la validación marca los 9 datos como pendientes.
+- Datos inválidos (cada uno bloquea el envío): nombre "Al" (muy corto), correo "abc" y "abc@", celular "2001234567" 
+  (no empieza por 3), "300123456" (9 dígitos) y "30012345a7" (letra), acompañantes 4, -1 y 1.5.
+- El celular no deja escribir más de 10 caracteres.
+- Datos válidos: nombre "Ana", correo "a@b.co", celular "3001234567" y acompañantes 0 y 3 pasan.
+- Solo con teclado (Tab, flechas, Espacio y Enter): llegué desde el enlace "Inscripción" del encabezado, rellené todo y envié.
+  El orden del foco fue: nombre, correo, celular, ruta, día, acompañantes, nivel, bicicleta, condiciones y botón. En todos se ve el anillo de foco.
+- Se ve bien a 360, 768 y 1280 px, sin scroll horizontal, en modo claro y oscuro.
